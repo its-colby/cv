@@ -30,6 +30,8 @@ jobs:
         env:
           BASE_PATH: '/${{ github.event.repository.name }}'
         run: |
+          # Get latest commit date and save to JSON
+          echo "{\"lastUpdated\": \"$(git log -1 --format=%cI)\"}" > static/lastUpdated.json
           npm run build
 
       - name: Upload Artifacts

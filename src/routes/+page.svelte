@@ -1,24 +1,30 @@
 <script lang="ts">
-    import Header from '$lib/header/Header.svelte';
-    import Academia from '$lib/academia/Academia.svelte';
-    import Industry from '$lib/industry/Industry.svelte';
+    import Header from '$lib/ui/header/Header.svelte';
+    import Academia from '$lib/ui/sections/Academia.svelte';
+    import Industry from '$lib/ui/sections/Industry.svelte';
 </script>
 
 <Header/>
 <main>
-    <section class="academia-card">
+    <section id="academia">
         <Academia/>
     </section>
-    
-    <section class="industry-card">
+
+    <section id="industry">
         <Industry/>
     </section>
 </main>
 
 
 <style>
-    :global(*, *::before, *::after) {
-        box-sizing: border-box;
+    :root {
+        --text-size-massive: 30px;
+        --text-size-large: 20px;
+        --text-size-medium: 18px;
+        --text-size-small: 16px;
+
+        --text-weight-bold: 500;
+        --text-weight-normal: 400;
     }
 
     :global(body, html) {
@@ -32,30 +38,37 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
-        gap: 20px;
-        padding: 20px 40px;
-        width: 100%;
-        margin: 0 auto;
         box-sizing: border-box;
+
+        gap: 20px;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: 100%;
+        margin: 0;
     }
 
     section {
+        flex: 1;
+        box-sizing: border-box; 
+        
         background: var(--surface-color);
-        padding: 10px;
+        
         padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 20px;
+        
         border-radius: 12px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        flex: 1;
-        box-sizing: border-box;
     }
 
-    .academia-card {
+    section#academia {
         background-color: var(--card1-background-color);
     }
 
-    .industry-card {
+    section#industry {
         background-color: var(--card2-background-color);
     }
 
 </style>
-
