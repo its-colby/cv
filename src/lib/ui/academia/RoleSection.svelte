@@ -26,7 +26,7 @@
         flex-direction: column;
         gap: 10px;
         list-style: none;
-        margin-top: var(--list-margin-top);
+        padding-top: 10px;
         padding-left: 40px;
         margin: 0;
     }

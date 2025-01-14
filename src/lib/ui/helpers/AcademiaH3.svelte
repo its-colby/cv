@@ -1,10 +1,10 @@
 <script lang="ts">
-    let { year, title }: { year: string, title: string } = $props();
+    let { hovered, year, title }: { hovered: boolean, year: string, title: string } = $props();
 </script>
 
 <h3>
-    <time>{year}</time>
-    <span>{title}</span>
+    <time class={hovered ? 'academia-h3-hovered' : ''}>{year}</time>
+    <span class={hovered ? 'academia-h3-hovered' : ''}>{title}</span>
 </h3>
 
 <style>
@@ -28,8 +28,7 @@
         color: var(--text-brand-color1);
     }
 
-    :global(summary:hover) time, :global(summary:hover) span {
+    .academia-h3-hovered {
         color: var(--button-color-hovered);
-        transition: 0.4s;
     }
 </style>

@@ -4,8 +4,8 @@
     import Role from '$lib/ui/industry/Role.svelte';
 </script>
 
-{#snippet role(role: RoleType)}
+{#snippet item(role: RoleType)}
     <Role {role} />
 {/snippet}
 
-<Section title="Industry" data={roles} content={role} />
+<Section title="Industry" snippet_args={roles} content={item} />

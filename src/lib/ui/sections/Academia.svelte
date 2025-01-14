@@ -26,7 +26,7 @@
 
 </script>
 
-{#snippet degree(data: AcademiaSubHeading)}
+{#snippet item(data: AcademiaSubHeading)}
     {#if data.kind === 'degree'}
         <Degree/>
     {:else if data.kind === 'teaching'}
@@ -38,4 +38,4 @@
     {/if}
 {/snippet}
 
-<Section title="Academia" data={academia_data} content={degree} />
+<Section title="Academia" snippet_args={academia_data} content={item} />

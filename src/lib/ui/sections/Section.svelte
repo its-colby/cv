@@ -1,12 +1,12 @@
 <script lang="ts" generics="T">
     import { type Snippet } from 'svelte';
-    let { title, data, content }: { title: string, data: T[], content: Snippet<[T]> } = $props();
+    let { title, snippet_args, content }: { title: string, snippet_args: T[], content: Snippet<[T]> } = $props();
 </script>
 
 <h1>{title}</h1>
 <ul>
-    {#each data as item}
-        <li>{@render content(item)}</li>
+    {#each snippet_args as arg}
+        <li>{@render content(arg)}</li>
     {/each}
 </ul>
 
@@ -20,7 +20,6 @@
         color: var(--text-neutral-color);
 
         margin: 0px;
-        margin-bottom: 30px;
     }
 
     ul {
@@ -29,7 +28,8 @@
 
         list-style: none;
 
-        gap: 10px;
+        gap: 20px;
         padding: 0px;
+        padding-top: 30px;
     }
 </style>

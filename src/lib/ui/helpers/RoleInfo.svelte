@@ -12,19 +12,22 @@
     ul {
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
 
         list-style: none;
 
-        margin-top: 10px;
         padding-left: 30px;
+        padding-right: 10px;
+    }
+
+    li {
+        display: flex;
     }
 
     li::before {
         content: "•";
-
+        flex-shrink: 0;
         margin-right: 0.5rem;
-        
         font-size: 18px;
         color: var(--text-neutral-color);
     }

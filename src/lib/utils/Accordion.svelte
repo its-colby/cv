@@ -2,8 +2,9 @@
     import type { Snippet } from "svelte";
     import { ChevronDown, ChevronUp } from 'lucide-svelte';
 
-    let { title, content }: { title: Snippet; content: Snippet } = $props();
+    let { header, details }: { header: Snippet<[boolean]>; details: Snippet; } = $props();
     let open: boolean = $state(false);
+    let hovered: boolean = $state(false);
     let detailsElement: HTMLDetailsElement;
     
     function toggle(event: Event) { 
@@ -16,8 +17,12 @@
 
 <details bind:this={detailsElement}>
 
-    <summary onclick={toggle}>
-        {@render title()}
+    <summary 
+        onclick={toggle}
+        onmouseenter={() => hovered = true}
+        onmouseleave={() => hovered = false}
+    >
+        {@render header(hovered)}
         {#if open}
             <ChevronUp size={24} />
         {:else}
@@ -25,7 +30,7 @@
         {/if}
     </summary>
     
-    <div>{@render content()}</div>
+    <div>{@render details()}</div>
 
 </details>
 
@@ -39,17 +44,17 @@
 
         cursor: pointer;
 
-        color: var(--button-color);
+        color: var(--chevron-color);
         
         transition: 0.4s;
     }
 
-    summary::-webkit-details-marker {
-        display: none;
+    summary:hover {
+        color: var(--chevron-color-hovered);
     }
 
-    summary:hover {
-        color: var(--button-color-hovered);
+    summary::-webkit-details-marker {
+        display: none;
     }
 
     div {

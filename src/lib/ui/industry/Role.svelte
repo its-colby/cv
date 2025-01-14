@@ -6,17 +6,17 @@
     let { role } : { role: Role } = $props();
 </script>
 
-{#snippet header()}
-    <IndustryH2 time={role.time} title={role.title} company={role.company} />
+{#snippet header(hovered: boolean)}
+    <IndustryH2 {hovered} time={role.time} title={role.title} company={role.company} />
 {/snippet}
 
-{#snippet content()}
+{#snippet details()}
     <RoleInfo bullets={role.bullets} />
 {/snippet}
 
 <Accordion
-    --button-color='var(--text-neutral-color)'
-    --button-color-hovered='var(--text-neutral-color-hovered)'
-    title={header}
-    content={content}
+    --chevron-color={'var(--text-neutral-color)'}
+    --chevron-color-hovered={'var(--text-neutral-color-hovered)'}
+    {header}
+    {details}
 />

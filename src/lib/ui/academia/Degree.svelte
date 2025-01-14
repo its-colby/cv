@@ -1,29 +1,27 @@
-<h2>
-    <span class="degree-header">Degree</span>
+<div>
+    <h2>Degree</h2>
     <span class="degree-title">A.B. Computer Science</span>
     <span class="degree-school">Brown University</span>
-</h2>
+</div>
 
 <style>
-    h2 {
-    font-size: 20px;
-    font-weight: 500;
-    color: var(--text-neutral-color);
-    margin: 0px;
-}
-
-    h2 {
+    div {
         display: flex;
         flex-direction: row;
     }
 
-    span.degree-header {
-        width: calc(var(--time-width) + var(--list-indentation));
+    h2 {
+        font-size: 20px;
+        font-weight: 500;
+        color: var(--text-neutral-color);
+        margin: 0px;
+        width: 190px;
     }
 
-    span.degree-school, span.degree-title {
+    span {
         font-weight: 400;
         font-size: var(--text-size-medium);
+        color: var(--text-neutral-color);
     }
 
     span.degree-title {

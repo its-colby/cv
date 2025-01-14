@@ -31,6 +31,7 @@
         margin-left: -60px;
         opacity: 0;
         transition: opacity 0.3s;
+        box-sizing: border-box;
     }
 
     .tooltip-text.above {

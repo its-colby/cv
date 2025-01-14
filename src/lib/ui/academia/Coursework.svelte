@@ -4,17 +4,17 @@
 </script>
 
 <Accordion 
-    title={title} 
-    content={content}
-    --button-color='var(--text-neutral-color)'
-    --button-color-hovered='var(--text-neutral-color-hovered)'
+    {header}
+    {details}
+    --chevron-color='var(--text-neutral-color)'
+    --chevron-color-hovered='var(--text-neutral-color-hovered)'
 />
 
-{#snippet title()}
-    <h2>Coursework</h2>
+{#snippet header(hovered: boolean)}
+    <h2 class={hovered ? 'coursework-header-hovered' : ''}>Coursework</h2>
 {/snippet}
 
-{#snippet content()}
+{#snippet details()}
     <ul id="coursework-list">
         {#each courses as course}
             <li>
@@ -38,10 +38,10 @@
         display: flex;
         flex-direction: column;
 
-        gap: var(--list-items-gap);
-        padding: 0;
-        margin-top: var(--list-margin-top);
-        margin-left: var(--list-indentation);
+        gap: 10px;
+        padding-top: 10px;
+        padding-left: 40px;
+        margin: 0;
 
         list-style: none;
     }
@@ -59,8 +59,11 @@
         font-weight: 400;
     }
 
-    :global(summary:hover) h2 {
+    time {
+        width: 150px;
+    }
+
+    .coursework-header-hovered {
         color: var(--text-neutral-color-hovered);
-        transition: 0.4s;
     }
 </style>

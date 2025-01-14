@@ -7,17 +7,17 @@
     let { year, title, bullets }: Role = $props();
 </script>
 
-{#snippet header()}
-    <AcademiaH3 year={year} title={title} />
+{#snippet header(hovered: boolean)}
+    <AcademiaH3 {hovered} year={year} title={title} />
 {/snippet}
 
-{#snippet content()}
+{#snippet details()}
     <RoleInfo bullets={bullets} />
 {/snippet}
 
 <Accordion
-    --button-color='var(--text-neutral-color)'
-    --button-color-hovered='var(--text-neutral-color-hovered)'
-    title={header}
-    content={content}
+    --chevron-color='var(--text-neutral-color)'
+    --chevron-color-hovered='var(--text-neutral-color-hovered)'
+    {header}
+    {details}
 />

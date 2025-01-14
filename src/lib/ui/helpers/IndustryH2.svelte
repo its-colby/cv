@@ -1,11 +1,11 @@
 <script lang="ts">
-    let { time, title, company } : { time: string, title: string, company: string } = $props();
+    let { hovered, time, title, company } : { hovered: boolean, time: string, title: string, company: string } = $props();
 </script>
 
 <h2>
-    <time>{time}</time>
-    <span class="role-title">{title}</span>
-    <span class="role-company">{company}</span>
+    <time class={hovered ? 'industry-h2-hovered' : ''}>{time}</time>
+    <span class="role-title {hovered ? 'industry-h2-hovered' : ''}">{title}</span>
+    <span class="role-company {hovered ? 'industry-h2-hovered' : ''}">{company}</span>
 </h2>
 
 <style>
@@ -26,12 +26,15 @@
         color: var(--text-brand-color1);
     }
 
+    span.role-title.industry-h2-hovered {
+        color: var(--text-contrast-color);
+    }
+
     time {
         width: 150px;
     }
 
-    :global(summary:hover) time, :global(summary:hover) span {
-        color: var(--button-color-hovered);
-        transition: 0.4s;
+    .industry-h2-hovered {
+        color: var(--text-contrast-color);
     }
 </style>
