@@ -1,15 +1,11 @@
 <script lang="ts">
-    import { roles } from '$lib/ui/industry/data';
+    import { roles, type Role as RoleType } from '$lib/ui/industry/data';
+    import Section from '$lib/ui/sections/Section.svelte';
     import Role from '$lib/ui/industry/Role.svelte';
 </script>
 
-<h1>Industry</h1>
-<ul>
-    {#each roles as role}
-        <li><Role {role} /></li>
-    {/each}
-</ul>
+{#snippet role(role: RoleType)}
+    <Role {role} />
+{/snippet}
 
-<style>
-    @import './section.css';
-</style>
+<Section title="Industry" data={roles} content={role} />

@@ -1,18 +1,41 @@
 <script lang="ts">
-    import Roles from "$lib/ui/academia/Roles.svelte";
-    import { research_roles, teaching_roles } from "$lib/ui/academia/data";
+    import Roles from "$lib/ui/academia/RoleSection.svelte";
+    import { research_roles, teaching_roles, type Role as RoleType } from "$lib/ui/academia/data";
     import Coursework from "$lib/ui/academia/Coursework.svelte";
+    import Section from "$lib/ui/sections/Section.svelte";
     import Degree from "$lib/ui/academia/Degree.svelte";
+
+    type AcademiaSubHeading = {
+        kind: 'degree'
+    } | {
+        kind: 'teaching'
+        data: RoleType[]
+    } | {
+        kind: 'research'
+        data: RoleType[]
+    } | {
+        kind: 'coursework'
+    };
+
+    const academia_data: AcademiaSubHeading[] = [
+        {kind: 'degree'},
+        {kind: 'teaching', data: teaching_roles},
+        {kind: 'research', data: research_roles},
+        {kind: 'coursework'}
+    ];
+
 </script>
 
-<h1>Academia</h1>
-<ul>
-    <li><Degree/></li>
-    <li><Roles header="Teaching" roles={teaching_roles}/></li>
-    <li><Roles header="Research" roles={research_roles}/></li>
-    <li><Coursework/></li>
-</ul>
+{#snippet degree(data: AcademiaSubHeading)}
+    {#if data.kind === 'degree'}
+        <Degree/>
+    {:else if data.kind === 'teaching'}
+        <Roles header="Teaching" roles={data.data}/>
+    {:else if data.kind === 'research'}
+        <Roles header="Research" roles={data.data}/>
+    {:else if data.kind === 'coursework'}
+        <Coursework/>
+    {/if}
+{/snippet}
 
-<style>
-    @import './section.css';
-</style>
+<Section title="Academia" data={academia_data} content={degree} />

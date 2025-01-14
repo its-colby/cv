@@ -5,7 +5,12 @@
 </h2>
 
 <style>
-    @import './styles.css';
+    h2 {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-neutral-color);
+    margin: 0px;
+}
 
     h2 {
         display: flex;
