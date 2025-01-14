@@ -3,7 +3,7 @@
     import { onMount } from 'svelte';
 
     onMount(() => {
-        apply_color_theme(document.documentElement, UNI_THEMES.light);
+        apply_color_theme(document.documentElement, UNI_THEMES.dark);
     });
 
     let { children } = $props();
