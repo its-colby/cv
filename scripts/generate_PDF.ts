@@ -1,4 +1,5 @@
-import { roles } from '../src/lib/ui/industry/data';
+import { roles as industry_roles } from '../src/lib/cv_info/industry';
+import { teaching_roles, research_roles } from '../src/lib/cv_info/academia';
 import * as fs from 'fs';
 import markdownpdf from 'markdown-pdf';
 import path from 'path';
@@ -8,26 +9,32 @@ const outputIndex = args.indexOf('--output');
 const outputDir = outputIndex !== -1 ? args[outputIndex + 1] : '.';
 
 const mdPath = path.join(outputDir, 'cv.md');
-const pdfPath = path.join(outputDir, 'cv.pdf');
+const pdfPath = path.join(outputDir, 'colby_anderson.cv.pdf');
 
 
 function generateMarkdown(): string {
-    let markdown = '# Professional Experience\n\n';
+    let markdown = 'Please see https://cv.itscolby.com for the most detailed version of Colby Anderson\'s CV.\n\n';
+
+
+    markdown += '# Industry Experience\n\n';
     
-    roles.forEach(role => {
+    industry_roles.forEach(role => {
         markdown += `## ${role.title} at ${role.company}\n`;
-        markdown += `*${role.time} | ${role.contract} | ${role.length}*\n\n`;
-        
-        markdown += `### Responsibilities\n`;
-        markdown += `${role.responsibilities}\n\n`;
-        
-        markdown += `### Impact\n`;
-        markdown += `${role.impact}\n\n`;
-        
-        markdown += `### Key Contributions\n`;
-        markdown += role.contributions.map(c => `- ${c}`).join('\n');
+        markdown += `*${role.contract} | ${role.time} | ${role.duration}*\n\n`;
+
+        const bullets = [role.impact, ...role.contributions];
+        markdown += bullets.map(c => `- ${c}`).join('\n');
         markdown += '\n\n---\n\n';
     });
+
+    markdown += '# Academia Experience\n\n';
+    markdown += '## Teaching\n\n';
+    markdown += teaching_roles.map(r => `- ${r.year}: ${r.title}`).join('\n');
+    markdown += '\n\n---\n\n';
+
+    markdown += '## Research\n\n';
+    markdown += research_roles.map(r => `- ${r.year}: ${r.title}`).join('\n');
+    markdown += '\n\n---\n\n';
     
     return markdown;
 }

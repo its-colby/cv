@@ -32,10 +32,20 @@
             console.error('Failed to fetch last updated date:', error);
         }
     });
+
+    const download_file = () => {
+        const filePath = '/colby_anderson.cv.pdf'; // Adjust the path based on your file's location in the `static` folder
+        const link = document.createElement('a');
+        link.href = filePath;
+        link.download = 'colby_anderson.cv.pdf'; // This specifies the download filename
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link); // Clean up the DOM
+    };
 </script>
 
 {#snippet contact_nav()}
-    <a href="/">Contact</a>
+    <span>Contact</span>
 {/snippet}
 
 {#snippet email_dropdown()}
@@ -61,6 +71,11 @@
     <div>
         <nav aria-label="Main navigation">
             <ul>
+                <li>
+                    <button onclick={download_file}>
+                        Download PDF
+                    </button>
+                </li>
                 <li>
                     <Dropdown
                         on_click={copy_email}
@@ -88,7 +103,7 @@
         z-index: 100;
     }
 
-    a {
+    span, button {
         color: var(--text-neutral-color);
         font-weight: 500;
         font-size: 18px;
@@ -96,7 +111,13 @@
         margin: 0 10px;
     }
 
-    a:hover {
+    button {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    span:hover, button:hover {
         color: var(--text-neutral-color-hovered);
     }
 
