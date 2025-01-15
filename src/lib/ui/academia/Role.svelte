@@ -2,17 +2,22 @@
     import Accordion from '$lib/utils/Accordion.svelte';
     import RoleInfo from '$lib/ui/helpers/RoleInfo.svelte';
     import AcademiaH3 from '$lib/ui/helpers/AcademiaH3.svelte';
-    import { type AcademicRole } from '$lib/cv_info/academia';
+    import { type AcademicRole, type TeachingRole } from '$lib/cv_info/academia';
+    import DetailedTeaching from '../helpers/DetailedTeaching.svelte';
 
-    let { year, title, bullets }: AcademicRole = $props();
+    let { role }: { role: AcademicRole | TeachingRole } = $props();
 </script>
 
 {#snippet header(hovered: boolean)}
-    <AcademiaH3 {hovered} year={year} title={title} />
+    <AcademiaH3 {hovered} year={role.year} title={role.title} />
 {/snippet}
 
 {#snippet details()}
-    <RoleInfo bullets={bullets} />
+    {#if 'topics' in role}
+        <DetailedTeaching topics={role.topics} bullets={role.bullets} />
+    {:else}
+        <RoleInfo bullets={role.bullets} />
+    {/if}
 {/snippet}
 
 <Accordion

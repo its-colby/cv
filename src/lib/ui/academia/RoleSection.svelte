@@ -8,7 +8,7 @@
 <ul>
     {#each roles as role}
         <li>
-            <Role year={role.year} title={role.title} bullets={role.bullets}/>
+            <Role {role} />
         </li>
     {/each}
 </ul>
