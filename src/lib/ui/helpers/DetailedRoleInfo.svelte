@@ -1,9 +1,9 @@
 <script lang="ts">
-    let { contract, length, responsibilities, impact, contributions }: { contract: string, length: string, responsibilities: string, impact: string, contributions: string[] } = $props();
+    let { contract, duration, responsibilities, impact, contributions }: { contract: string, duration: string, responsibilities: string, impact: string, contributions: string[] } = $props();
 </script>
 
 <div>
-    <h4 class="time-contract"><span>{contract}</span><span>{length}</span></h4>
+    <h4 class="time-contract"><span>{contract}</span><span>{duration}</span></h4>
     <h4>Responsibilities</h4>
     <p>{responsibilities}</p>
     <h4>Impact</h4>

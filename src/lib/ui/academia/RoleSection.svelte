@@ -1,7 +1,7 @@
 <script lang="ts">
     import Role from './Role.svelte';
-    import { type Role as RoleType } from './data';
-    let { header, roles } : { header: string, roles: RoleType[] } = $props();
+    import { type AcademicRole } from '$lib/cv_info/academia';
+    let { header, roles } : { header: string, roles: AcademicRole[] } = $props();
 </script>
 
 <h2>{header}</h2>

@@ -2,9 +2,9 @@
     import Accordion from '$lib/utils/Accordion.svelte';
     import RoleInfo from '$lib/ui/helpers/RoleInfo.svelte';
     import AcademiaH3 from '$lib/ui/helpers/AcademiaH3.svelte';
-    import { type Role } from './data';
+    import { type AcademicRole } from '$lib/cv_info/academia';
 
-    let { year, title, bullets }: Role = $props();
+    let { year, title, bullets }: AcademicRole = $props();
 </script>
 
 {#snippet header(hovered: boolean)}

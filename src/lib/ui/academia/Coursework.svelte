@@ -1,6 +1,6 @@
 <script lang="ts">
     import Accordion from "$lib/utils/Accordion.svelte";
-    import { courses } from './data';
+    import { courses } from '$lib/cv_info/academia';
 </script>
 
 <Accordion 

@@ -1,6 +1,6 @@
 <script lang="ts">
     import Roles from "$lib/ui/academia/RoleSection.svelte";
-    import { research_roles, teaching_roles, type Role as RoleType } from "$lib/ui/academia/data";
+    import { research_roles, teaching_roles, type AcademicRole } from "$lib/cv_info/academia";
     import Coursework from "$lib/ui/academia/Coursework.svelte";
     import Section from "$lib/ui/sections/Section.svelte";
     import Degree from "$lib/ui/academia/Degree.svelte";
@@ -9,10 +9,10 @@
         kind: 'degree'
     } | {
         kind: 'teaching'
-        data: RoleType[]
+        data: AcademicRole[]
     } | {
         kind: 'research'
-        data: RoleType[]
+        data: AcademicRole[]
     } | {
         kind: 'coursework'
     };
