@@ -21,6 +21,7 @@ export interface ColorTheme {
 
     text_neutral_color: WithHover<string>;
     text_brand_color1: WithHover<string>;
+    text_brand_color2: WithHover<string>;
     text_contrast_color: string;
 
     success: WithHover<string>;
@@ -36,6 +37,7 @@ export const UNI_LIGHT: ColorTheme = {
 
     text_neutral_color: default_and_hovered(COLORS.gray_49, COLORS.gray_13),
     text_brand_color1: default_and_hovered(COLORS.vibrant_magenta, COLORS.magenta),
+    text_brand_color2: default_and_hovered('hsl(299, 95%, 35%)', COLORS.violet_purple),
     text_contrast_color: COLORS.black,
 
     success: default_and_hovered(COLORS.grass_green, COLORS.pine_green),
@@ -51,6 +53,7 @@ export const UNI_DARK: ColorTheme = {
 
     text_neutral_color: default_and_hovered(COLORS.gray_61, COLORS.white),
     text_brand_color1: UNI_LIGHT.text_brand_color1,
+    text_brand_color2: default_and_hovered('hsl(299, 95%, 85%)', COLORS.violet_purple),
     text_contrast_color: COLORS.white,
 
     success: UNI_LIGHT.success,

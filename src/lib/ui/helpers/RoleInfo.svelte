@@ -17,19 +17,11 @@
         list-style: none;
 
         padding-left: 30px;
-        padding-right: 10px;
+        padding-right: 45px;
     }
 
     li {
         display: flex;
-    }
-
-    li::before {
-        content: "•";
-        flex-shrink: 0;
-        margin-right: 0.5rem;
-        font-size: 18px;
-        color: var(--text-neutral-color);
     }
 
     span {

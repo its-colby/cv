@@ -1,7 +1,7 @@
 <script lang="ts">
     import Accordion from '$lib/utils/Accordion.svelte';
     import IndustryH2 from '$lib/ui/helpers/IndustryH2.svelte';
-    import RoleInfo from '$lib/ui/helpers/RoleInfo.svelte';
+    import DetailedRoleInfo from '$lib/ui/helpers/DetailedRoleInfo.svelte';
     import { type Role } from './data';
     let { role } : { role: Role } = $props();
 </script>
@@ -11,7 +11,7 @@
 {/snippet}
 
 {#snippet details()}
-    <RoleInfo bullets={role.bullets} />
+    <DetailedRoleInfo contract={role.contract} length={role.length} responsibilities={role.responsibilities} impact={role.impact} contributions={role.contributions} />
 {/snippet}
 
 <Accordion

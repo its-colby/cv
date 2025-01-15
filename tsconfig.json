@@ -15,7 +15,11 @@
 			"$lib/*": ["src/lib/*"]
 		},
 		"types": ["svelte", "@sveltejs/kit"]
-	}
+	},
+	"ts-node": {
+      "esm": true,
+      "experimentalSpecifierResolution": "node"
+    }
 	// Path aliases are handled by https://svelte.dev/docs/kit/configuration#alias
 	// except $lib which is handled by https://svelte.dev/docs/kit/configuration#files
 	//

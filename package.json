@@ -8,7 +8,8 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"generate": "node --experimental-json-modules --loader ts-node/esm scripts/generate_PDF.ts --output ./static"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.0.0",
@@ -19,9 +20,12 @@
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
 		"typescript": "^5.0.0",
-		"vite": "^5.4.11"
+		"vite": "^5.4.11",
+		"@types/markdown-pdf": "^9.0.5",
+		"ts-node": "^10.9.2"
 	},
 	"dependencies": {
-		"lucide-svelte": "^0.471.0"
+		"lucide-svelte": "^0.471.0",
+		"markdown-pdf": "^11.0.0"
 	}
 }
