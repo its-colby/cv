@@ -1,22 +1,21 @@
 <script lang="ts" module>
-    import { roles as industry_positions } from '$lib/cv_info/industry';
-    import { type AcademicRole, type TeachingRole } from '$lib/cv_info/academia';
-    import { type IndustryRole } from '$lib/cv_info/industry'
-    import Position from '$lib/ui/new/Position.svelte';
-    import { research_roles, teaching_roles } from "$lib/cv_info/academia";
-    import Coursework from "$lib/ui/new/Coursework.svelte";
+    import { industry_roles, research_roles, teaching_roles, type AnyRole} from '$lib/info';
+    import Position from '$lib/ui/Position.svelte';
+    import Coursework from "$lib/ui/Coursework.svelte";
+
+    type RoleArray = AnyRole[];
 
     export { section }
 </script>
 
-{#snippet positions_list_elements(positions: AcademicRole[] | TeachingRole[] | IndustryRole[])}
+{#snippet positions_list_elements(positions: RoleArray)}
     {#each positions as position}
         <li><Position role={position}/></li>
     {/each}
 {/snippet}
 
 
-{#snippet academia_positions(text: string, positions: AcademicRole[] | TeachingRole[] | IndustryRole[])}
+{#snippet academia_positions(text: string, positions: RoleArray)}
     <h2>{text}</h2>
     <ul class="academia-positions">
         {@render positions_list_elements(positions)}
@@ -41,7 +40,7 @@
             <li>{@render academia_positions("Research", research_roles)}</li>
             <li><Coursework/></li>
         {:else}
-            {@render positions_list_elements(industry_positions)}
+            {@render positions_list_elements(industry_roles)}
         {/if}
     </ul>
 {/snippet}

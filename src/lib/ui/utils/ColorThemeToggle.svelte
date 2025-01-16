@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Tooltip from '$lib/utils/Tooltip.svelte';
+    import Tooltip from '$lib/ui/utils/Tooltip.svelte';
     import { Sun, Moon } from 'lucide-svelte';
     import { apply_color_theme, type ColorThemes } from '$lib/theme/color_theme';
 

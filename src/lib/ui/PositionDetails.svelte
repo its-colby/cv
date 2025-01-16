@@ -1,28 +1,6 @@
 <script lang="ts" module>
+    import { type AnyRole, type Role as ResearchRole, type TeachingRole, type IndustryRole, RoleType } from '$lib/info';
     export { details };
-
-    interface Base {
-        kind: 'teaching' | 'research' | 'industry';
-        info: string[];
-    }
-
-    export interface TeachingDetails extends Base {
-        kind: 'teaching';
-        topics: string;
-    };
-
-    export interface ResearchDetails extends Base {
-        kind: 'research';
-    };
-
-    export interface IndustryDetails extends Omit<Base, 'info'> {
-        kind: 'industry';
-        contract: string;
-        duration: string;
-        responsibilities: string;
-        impact: string;
-        contributions: string[];
-    };
 </script>
 
 
@@ -48,20 +26,20 @@
 {/snippet}
 
 
-{#snippet teaching_details(details: TeachingDetails)}
-        {@render paragraphs(details.info)}
+{#snippet teaching_details(details: TeachingRole)}
+        {@render paragraphs(details.contributions)}
         {@render header("Course Topics")}
         <p>{details.topics}</p>
 {/snippet}
 
 
-{#snippet research_details(details: ResearchDetails)}
-        {@render paragraphs(details.info)}
+{#snippet research_details(details: ResearchRole)}
+        {@render paragraphs(details.contributions)}
 {/snippet}
 
 
-{#snippet industry_details(details: IndustryDetails)}
-        {@render contract_and_duration(details.contract, details.duration)}
+{#snippet industry_details(details: IndustryRole)}
+        {@render contract_and_duration(details.commitment, details.duration)}
         {@render header("Responsibilities")}
         <p>{details.responsibilities}</p>
         {@render header("Impact")}
@@ -71,13 +49,13 @@
 {/snippet}
 
 
-{#snippet details(details: TeachingDetails | ResearchDetails | IndustryDetails)}
+{#snippet details(details: AnyRole)}
     <div class="details-container">
-        {#if details.kind === 'teaching'}
+        {#if details.kind === RoleType.TEACHING}
             {@render teaching_details(details)}
-        {:else if details.kind === 'industry'}
+        {:else if details.kind === RoleType.INDUSTRY}
             {@render industry_details(details)}
-        {:else if details.kind === 'research'}
+        {:else if details.kind === RoleType.RESEARCH}
             {@render research_details(details)}
         {/if}
     </div>

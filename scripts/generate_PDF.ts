@@ -1,5 +1,4 @@
-import { roles as industry_roles } from '../src/lib/cv_info/industry';
-import { teaching_roles, research_roles } from '../src/lib/cv_info/academia';
+import { industry_roles, teaching_roles, research_roles } from '../src/lib/info';
 import * as fs from 'fs';
 import markdownpdf from 'markdown-pdf';
 import path from 'path';
@@ -20,7 +19,7 @@ function generateMarkdown(): string {
     
     industry_roles.forEach(role => {
         markdown += `## ${role.title} at ${role.company}\n`;
-        markdown += `*${role.contract} | ${role.time} | ${role.duration}*\n\n`;
+        markdown += `*${role.commitment} | ${role.date} | ${role.duration}*\n\n`;
 
         const bullets = [role.impact, ...role.contributions];
         markdown += bullets.map(c => `- ${c}`).join('\n');
@@ -29,11 +28,11 @@ function generateMarkdown(): string {
 
     markdown += '# Academia Experience\n\n';
     markdown += '## Teaching\n\n';
-    markdown += teaching_roles.map(r => `- ${r.year}: ${r.title}`).join('\n');
+    markdown += teaching_roles.map(r => `- ${r.date}: ${r.title}`).join('\n');
     markdown += '\n\n---\n\n';
 
     markdown += '## Research\n\n';
-    markdown += research_roles.map(r => `- ${r.year}: ${r.title}`).join('\n');
+    markdown += research_roles.map(r => `- ${r.date}: ${r.title}`).join('\n');
     markdown += '\n\n---\n\n';
     
     return markdown;

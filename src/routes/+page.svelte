@@ -1,6 +1,6 @@
 <script lang="ts">
-    import Header from '$lib/ui/header/Header.svelte';
-    import { section } from '$lib/ui/new/Sections.svelte'
+    import Header from '$lib/ui/Header.svelte';
+    import { section } from '$lib/ui/Sections.svelte'
 </script>
 
 <Header/>

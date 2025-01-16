@@ -1,7 +1,7 @@
 <script lang="ts">
-    import ColorThemeToggle from '$lib/utils/ColorThemeToggle.svelte';
+    import ColorThemeToggle from '$lib/ui/utils/ColorThemeToggle.svelte';
     import { active_color_themes } from '$lib/theme/active.svelte';
-    import Dropdown from '$lib/utils/Dropdown.svelte';
+    import Dropdown from '$lib/ui/utils/Dropdown.svelte';
     import { Copy } from 'lucide-svelte';
     import { fade } from 'svelte/transition';
     import { onMount } from 'svelte';

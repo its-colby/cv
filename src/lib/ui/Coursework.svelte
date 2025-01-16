@@ -1,15 +1,7 @@
 <script lang="ts">
-    import Accordion from "$lib/utils/Accordion.svelte";
-    import { courses, type Course } from '$lib/cv_info/academia';
-    import { header, type CourseHeader } from '$lib/ui/new/PositionHeader.svelte';
-
-    function make_course(course: Course): CourseHeader {
-        return {
-            kind: 'course', 
-            year: course.date, 
-            title: course.title
-        }
-    }
+    import Accordion from "$lib/ui/utils/Accordion.svelte";
+    import { courses, type Course } from '$lib/info';
+    import { header } from '$lib/ui/PositionHeader.svelte';
 </script>
 
 <Accordion 
@@ -27,7 +19,7 @@
     <ul id="coursework-list">
         {#each courses as course}
             <li>
-                {@render header(false, make_course(course))}
+                {@render header(false, course)}
             </li>
         {/each}
     </ul>
