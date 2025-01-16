@@ -1,26 +1,30 @@
 <script lang="ts" module>
 
-    export interface AcademiaHeader {
+    interface Base {
+        kind: 'academia' | 'course' | 'industry';
+        year: string;
+        title: string;
+    }
+
+    export interface AcademiaHeader extends Base {
         kind: 'academia';
-        year: string;
-        title: string;
     };
 
-    export interface CourseHeader {
+    export interface CourseHeader extends Base {
         kind: 'course';
-        year: string;
-        title: string;
     };
 
-    export interface IndustryHeader {
+    export interface IndustryHeader extends Base {
         kind: 'industry';
-        year: string;
-        title: string;
         company: string;
     };
 
+    export type AnyHeader = AcademiaHeader | CourseHeader | IndustryHeader;
+
     export { header };
 </script>
+
+
 
 {#snippet course_header(header: CourseHeader)}
     <h3>
@@ -47,7 +51,7 @@
 {/snippet}
 
 
-{#snippet header(hovered: boolean = false, header: AcademiaHeader | IndustryHeader | CourseHeader)}
+{#snippet header(hovered: boolean = false, header: AnyHeader)}
     {#if header.kind === 'industry'}
         {@render industry_header(hovered, header)}
     {:else if header.kind === 'academia'}

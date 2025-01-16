@@ -1,18 +1,21 @@
 <script lang="ts" module>
     export { details };
 
-    export interface TeachingDetails {
-        kind: 'teaching';
+    interface Base {
+        kind: 'teaching' | 'research' | 'industry';
         info: string[];
+    }
+
+    export interface TeachingDetails extends Base {
+        kind: 'teaching';
         topics: string;
     };
 
-    export interface ResearchDetails {
+    export interface ResearchDetails extends Base {
         kind: 'research';
-        info: string[];
     };
 
-    export interface IndustryDetails {
+    export interface IndustryDetails extends Omit<Base, 'info'> {
         kind: 'industry';
         contract: string;
         duration: string;

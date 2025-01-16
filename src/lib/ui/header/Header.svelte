@@ -8,7 +8,7 @@
 
     let email = 'itscolbya@gmail.com';
     let just_copied = $state(false);
-    let last_updated: string | null = $state('January 13, 2025');
+    let last_updated: string | null = $state('January 15, 2025');
 
     function copy_email() {
         navigator.clipboard.writeText(email);

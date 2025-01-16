@@ -1,17 +1,16 @@
 <script lang="ts">
     import Header from '$lib/ui/header/Header.svelte';
-    import Academia from '$lib/ui/sections/Academia.svelte';
-    import Industry from '$lib/ui/sections/Industry.svelte';
+    import { section } from '$lib/ui/new/Sections.svelte'
 </script>
 
 <Header/>
 <main>
     <section id="academia">
-        <Academia/>
+        {@render section(true)}
     </section>
 
     <section id="industry">
-        <Industry/>
+        {@render section(false)}
     </section>
 </main>
 
