@@ -35,14 +35,6 @@
         display: flex;
     }
 
-    /* li::before {
-        content: "•";
-        flex-shrink: 0;
-        margin-right: 0.5rem;
-        font-size: 18px;
-        color: var(--text-neutral-color);
-    } */
-
     li span {
         font-size: 18px;
         font-weight: 400;
