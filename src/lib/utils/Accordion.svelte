@@ -45,8 +45,6 @@
         cursor: pointer;
 
         color: var(--chevron-color);
-        
-        transition: 0.4s;
     }
 
     summary:hover {

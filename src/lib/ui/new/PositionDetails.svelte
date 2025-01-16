@@ -4,7 +4,7 @@
     export interface TeachingDetails {
         kind: 'teaching';
         info: string[];
-        topics: string[];
+        topics: string;
     };
 
     export interface ResearchDetails {
@@ -37,7 +37,7 @@
 
 
 {#snippet paragraphs(paragraphs: string[])}
-    <div>
+    <div class="paragraphs-container">
         {#each paragraphs as paragraph}
             <p>{paragraph}</p>
         {/each}
@@ -48,7 +48,7 @@
 {#snippet teaching_details(details: TeachingDetails)}
         {@render paragraphs(details.info)}
         {@render header("Course Topics")}
-        {@render paragraphs(details.topics)}
+        <p>{details.topics}</p>
 {/snippet}
 
 
@@ -83,11 +83,15 @@
 
 <style>
 
-    div.details-container {
+    div {
         display: flex;
         flex-direction: column;
 
         gap: 10px;
+    }
+
+    div.details-container {
+
         padding-left: 30px;
         padding-right: 45px;
     }
@@ -109,5 +113,6 @@
         font-size: 18px;
         font-weight: 400;
         color: var(--text-neutral-color);
+        margin: 0px;
     }
 </style>

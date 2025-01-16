@@ -33,7 +33,7 @@
 {#snippet academia_header(hovered: boolean, header: AcademiaHeader)}
     <h3>
         <time class={hovered ? 'position-header-hovered' : ''}>{header.year}</time>
-        <span class={hovered ? 'position-header-hovered' : ''}>{header.title}</span>
+        <span class="academia-title {hovered ? 'position-header-hovered' : ''}">{header.title}</span>
     </h3>
 {/snippet}
 
@@ -47,7 +47,7 @@
 {/snippet}
 
 
-{#snippet header(hovered: boolean, header: AcademiaHeader | IndustryHeader | CourseHeader)}
+{#snippet header(hovered: boolean = false, header: AcademiaHeader | IndustryHeader | CourseHeader)}
     {#if header.kind === 'industry'}
         {@render industry_header(hovered, header)}
     {:else if header.kind === 'academia'}
@@ -82,7 +82,11 @@
         color: var(--text-brand-color1);
     }
 
-    .position-header-hovered, span.role-title.position-header-hovered {
+    span.academia-title {
+        color: var(--text-brand-color1);
+    }
+
+    .position-header-hovered, span.role-title.position-header-hovered, span.academia-title.position-header-hovered {
         color: var(--text-contrast-color);
     }
 </style>

@@ -1,22 +1,38 @@
 <script lang="ts">
     import Accordion from '$lib/utils/Accordion.svelte';
-    import IndustryH2 from '$lib/ui/helpers/IndustryH2.svelte';
-    import DetailedRoleInfo from '$lib/ui/helpers/DetailedRoleInfo.svelte';
     import { type IndustryRole } from '$lib/cv_info/industry';
+    import { header, type IndustryHeader } from '$lib/ui/new/PositionHeader.svelte';
+    import { details, type IndustryDetails } from '$lib/ui/new/PositionDetails.svelte';
     let { role } : { role: IndustryRole } = $props();
+
+    let header_data: IndustryHeader = {
+        kind: 'industry',
+        year: role.time,
+        title: role.title,
+        company: role.company,
+    };
+
+    let details_data: IndustryDetails = {
+        kind: 'industry',
+        contract: role.contract,
+        duration: role.duration,
+        responsibilities: role.responsibilities,
+        impact: role.impact,
+        contributions: role.contributions,
+    };
 </script>
 
-{#snippet header(hovered: boolean)}
-    <IndustryH2 {hovered} time={role.time} title={role.title} company={role.company} />
+{#snippet wrapper_header(hovered: boolean)}
+    {@render header(hovered, header_data)}
 {/snippet}
 
-{#snippet details()}
-    <DetailedRoleInfo contract={role.contract} duration={role.duration} responsibilities={role.responsibilities} impact={role.impact} contributions={role.contributions} />
+{#snippet wrapper_details()}
+    {@render details(details_data)}
 {/snippet}
 
 <Accordion
     --chevron-color={'var(--text-neutral-color)'}
     --chevron-color-hovered={'var(--text-neutral-color-hovered)'}
-    {header}
-    {details}
+    header={wrapper_header}
+    details={wrapper_details}
 />
