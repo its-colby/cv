@@ -46,6 +46,11 @@
         padding-bottom: 20px;
         width: 100%;
         margin: 0;
+
+        @media (max-width: 800px) {
+            flex-direction: column;
+            padding: 20px;
+        }
     }
 
     section {
@@ -57,6 +62,7 @@
         padding-left: 20px;
         padding-right: 20px;
         padding-top: 20px;
+        padding-bottom: 20px;
         
         border-radius: 12px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

@@ -116,5 +116,9 @@
 
     span.degree-title {
         width: 250px;
+
+        /* @media (max-width: 1300px) {
+            width: 200px;
+        } */
     }
 </style>

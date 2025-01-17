@@ -148,6 +148,13 @@
         color: var(--text-neutral-color);
     }
 
+    @media (max-width: 800px) {
+        header nav, span.last-updated {
+            display: none;
+            width: 0;
+        }
+    }
+
     header .email-dropdown {
         display: flex;
         align-items: center;
