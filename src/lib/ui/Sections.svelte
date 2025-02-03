@@ -67,7 +67,7 @@
         font-size: 30px;
         font-weight: 500;
 
-        color: var(--text-neutral-color);
+        color: var(--text-neutral);
 
         margin: 0px;
     }
@@ -95,7 +95,7 @@
     h2 {
         font-size: 20px;
         font-weight: 500;
-        color: var(--text-neutral-color);
+        color: var(--text-neutral);
         margin: 0px;
     }
 
@@ -111,7 +111,7 @@
     span {
         font-weight: 400;
         font-size: var(--text-size-medium);
-        color: var(--text-neutral-color);
+        color: var(--text-neutral);
     }
 
     span.degree-title {

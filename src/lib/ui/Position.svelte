@@ -17,8 +17,8 @@
 
 
 <Accordion
-    --chevron-color='var(--text-neutral-color)'
-    --chevron-color-hovered='var(--text-neutral-color-hovered)'
+    --chevron-color='var(--text-neutral)'
+    --chevron-color-hovered='var(--text-neutral-hovered)'
     header={wrapper_header}
     details={wrapper_details}
 />

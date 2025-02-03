@@ -86,14 +86,14 @@
     h4 {
         font-size: 18px;
         font-weight: 400;
-        color: var(--text-brand-color2);
+        color: var(--text-brand);
         margin: 0px;
     }
 
     p {
         font-size: 18px;
         font-weight: 400;
-        color: var(--text-neutral-color);
+        color: var(--text-neutral);
         margin: 0px;
     }
 </style>

@@ -1,9 +1,9 @@
 <script lang="ts">
-    import { apply_color_theme, UNI_THEMES } from '$lib/theme/color_theme';
+    import { theme } from '$lib/theme';
     import { onMount } from 'svelte';
 
     onMount(() => {
-        apply_color_theme(document.documentElement, UNI_THEMES.dark);
+        theme.apply(document.documentElement);
     });
 
     let { children } = $props();

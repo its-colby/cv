@@ -1,6 +1,7 @@
 <script lang="ts">
     import Header from '$lib/ui/Header.svelte';
     import { section } from '$lib/ui/Sections.svelte'
+    // iphone - 844 × 390 - ipad - 1080 x 810
 </script>
 
 <Header/>
@@ -30,7 +31,7 @@
         margin: 0;
         padding: 0;
         font-family: 'Roboto', sans-serif;
-        background-color: var(--content-background-color);
+        background-color: var(--main-background);
     }
 
     main {
@@ -56,24 +57,21 @@
     section {
         flex: 1;
         box-sizing: border-box; 
-        
-        background: var(--surface-color);
-        
+                
         padding-left: 20px;
         padding-right: 20px;
         padding-top: 20px;
         padding-bottom: 20px;
         
         border-radius: 12px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     section#academia {
-        background-color: var(--card1-background-color);
+        background-color: var(--card-a-background);
     }
 
     section#industry {
-        background-color: var(--card2-background-color);
+        background-color: var(--card-a-background);
     }
 
 </style>

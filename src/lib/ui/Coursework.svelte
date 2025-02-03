@@ -7,8 +7,8 @@
 <Accordion 
     header={wrapper_header}
     {details}
-    --chevron-color='var(--text-neutral-color)'
-    --chevron-color-hovered='var(--text-neutral-color-hovered)'
+    --chevron-color='var(--text-neutral)'
+    --chevron-color-hovered='var(--text-neutral-hovered)'
 />
 
 {#snippet wrapper_header(hovered: boolean)}
@@ -29,7 +29,7 @@
     h2 {
     font-size: 20px;
     font-weight: 500;
-    color: var(--text-neutral-color);
+    color: var(--text-neutral);
     margin: 0px;
 }
     ul#coursework-list {
@@ -45,6 +45,6 @@
     }
 
     .coursework-header-hovered {
-        color: var(--text-neutral-color-hovered);
+        color: var(--text-neutral-hovered);
     }
 </style>

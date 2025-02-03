@@ -48,7 +48,7 @@
 
         margin: 0px;
 
-        color: var(--text-neutral-color);
+        color: var(--text-neutral);
 
         font-size: 18px;
         font-weight: 400;
@@ -62,14 +62,14 @@
         width: 250px;
         font-size: 20px;
         font-weight: 500;
-        color: var(--text-brand-color1);
+        color: var(--text-brand);
     }
 
     span.academia-title {
-        color: var(--text-brand-color1);
+        color: var(--text-brand);
     }
 
     .position-header-hovered, span.role-title.position-header-hovered, span.academia-title.position-header-hovered {
-        color: var(--text-contrast-color);
+        color: var(--text-contrast);
     }
 </style>

@@ -1,14 +1,20 @@
-<script lang="ts">
+<script lang="ts" generics="T">
     import type { Snippet } from 'svelte';
 
     interface Props {
         text: string;
-        content: Snippet;
+        data?: T | undefined;
+        content: Snippet<[T | undefined]>;
         position?: "above" | "below";
     }
 
-    let { text = "", content, position = "above" } : Props = $props();
+    let { text = "", data = undefined, content, position = "above" } : Props = $props();
 </script>
+
+<div class="tooltip">
+    {@render content(data)}
+    <div class="tooltip-text {position}">{text}</div>
+</div>
 
 <style>
     .tooltip {
@@ -18,20 +24,20 @@
     }
 
     .tooltip-text {
-        visibility: hidden;
-        width: 120px;
-        background-color: black;
-        color: #fff;
-        text-align: center;
-        border-radius: 5px;
-        padding: 5px;
         position: absolute;
-        z-index: 1;
+        /* bottom: calc(100% + 8px); */
         left: 50%;
-        margin-left: -60px;
+        transform: translateX(-50%);
+        background: var(--card-contrast-background);
+        color: var(--text-anti-contrast);
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+        white-space: nowrap;
+        pointer-events: none;
         opacity: 0;
-        transition: opacity 0.3s;
-        box-sizing: border-box;
+        transition: opacity 0.1s ease;
+        z-index: 1001;
     }
 
     .tooltip-text.above {
@@ -43,12 +49,6 @@
     }
 
     .tooltip:hover .tooltip-text {
-        visibility: visible;
         opacity: 1;
     }
 </style>
-
-<div class="tooltip">
-    {@render content()}
-    <div class="tooltip-text {position}">{text}</div>
-</div>

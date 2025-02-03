@@ -1,6 +1,5 @@
 <script lang="ts">
     import ColorThemeToggle from '$lib/ui/utils/ColorThemeToggle.svelte';
-    import { active_color_themes } from '$lib/theme/active.svelte';
     import Dropdown from '$lib/ui/utils/Dropdown.svelte';
     import { Copy } from 'lucide-svelte';
     import { fade } from 'svelte/transition';
@@ -85,14 +84,14 @@
                 </li>
             </ul>
         </nav>
-        <ColorThemeToggle size={25} color_themes={active_color_themes}/>
+        <ColorThemeToggle size={25}/>
     </div>
 </header>
 
 
 <style>
     header {
-        background-color: var(--header-background-color);
+        background-color: var(--header-background);
         padding: 10px 30px;
         display: flex;
         justify-content: space-between;
@@ -104,7 +103,7 @@
     }
 
     span, button {
-        color: var(--text-neutral-color);
+        color: var(--text-neutral);
         font-weight: 500;
         font-size: 18px;
         text-decoration: none;
@@ -118,7 +117,7 @@
     }
 
     span:hover, button:hover {
-        color: var(--text-neutral-color-hovered);
+        color: var(--text-neutral-hovered);
     }
 
     header nav ul {
@@ -138,21 +137,22 @@
         transform: none;
         font-size: 20px;
         font-weight: 500;
-        color: var(--text-neutral-color);
+        color: var(--text-neutral);
         margin: 0;
     }
 
     header h2 {
         font-size: 18px;
         font-weight: 500;
-        color: var(--text-neutral-color);
+        color: var(--text-neutral);
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 500px) {
         header nav, span.last-updated {
             display: none;
             width: 0;
         }
+
     }
 
     header .email-dropdown {
