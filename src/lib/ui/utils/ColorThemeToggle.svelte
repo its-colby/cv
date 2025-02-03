@@ -25,6 +25,6 @@
 
         cursor: pointer;
         
-        color: var(--text-contrast-color);
+        color: var(--text-contrast);
     }
 </style>
