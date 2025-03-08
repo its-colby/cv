@@ -22,10 +22,13 @@
 
 
 {#snippet industry_header(hovered: boolean, header: IndustryRole)}
-    <h2>
-        <time class={hovered ? 'position-header-hovered' : ''}>{header.date}</time>
-        <span class="role-title {hovered ? 'position-header-hovered' : ''}">{header.title}</span>
-        <span class="role-company {hovered ? 'position-header-hovered' : ''}">{header.company}</span>
+    <h2 class="industry-header">
+        <div class="top-row">
+            <time class={hovered ? 'position-header-hovered' : ''}>{header.date}</time>
+            <span class="role-title {hovered ? 'position-header-hovered' : ''}">{header.title}</span>
+            <span class="role-company {hovered ? 'position-header-hovered' : ''}">{header.company}</span>
+        </div>
+        <span class="role-title-mobile {hovered ? 'position-header-hovered' : ''}">{header.title}</span>
     </h2>
 {/snippet}
 
@@ -78,6 +81,43 @@
 
         @media (max-width: 700px) {
             width: 230px;
+        }
+    }
+
+    .industry-header {
+        flex-direction: row;
+
+        @media (max-width: 700px) {
+            flex-direction: column;
+        }
+    }
+
+    .top-row {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .role-title-mobile {
+        display: none;
+        width: 100%;
+        font-size: 20px;
+        font-weight: 500;
+        color: var(--text-brand);
+        margin-top: 4px;
+    }
+
+    @media (max-width: 700px) {
+        .role-title {
+            display: none;
+        }
+
+        .role-title-mobile {
+            display: block;
+        }
+
+        .top-row {
+            justify-content: space-between;
         }
     }
 </style>
