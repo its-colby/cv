@@ -8,7 +8,7 @@
 {#snippet course_header(header: Course)}
     <h3>
         <time>{header.date}</time>
-        <span>{header.title}</span>
+        <span class="course-title">{header.title}</span>
     </h3>
 {/snippet}
 
@@ -58,18 +58,26 @@
         width: 150px;
     }
 
-    span.role-title {
+    span.role-title, span.academia-title {
         width: 250px;
         font-size: 20px;
         font-weight: 500;
         color: var(--text-brand);
-    }
 
-    span.academia-title {
-        color: var(--text-brand);
+        @media (max-width: 700px) {
+            width: 200px;
+        }
     }
 
     .position-header-hovered, span.role-title.position-header-hovered, span.academia-title.position-header-hovered {
         color: var(--text-contrast);
+    }
+
+    .course-title {
+        width: 250px;
+
+        @media (max-width: 700px) {
+            width: 230px;
+        }
     }
 </style>

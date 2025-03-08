@@ -90,6 +90,10 @@
         padding-top: 10px;
         padding-left: 40px;
         margin: 0;
+
+        @media (max-width: 700px) {
+            padding-left: 0px;
+        }
     }
 
     h2 {
@@ -106,6 +110,11 @@
     div {
         display: flex;
         flex-direction: row;
+
+        @media (max-width: 700px) {
+            flex-direction: column;
+            gap: 5px;
+        }
     }
 
     span {
@@ -117,8 +126,8 @@
     span.degree-title {
         width: 250px;
 
-        /* @media (max-width: 1300px) {
-            width: 200px;
-        } */
+        @media (max-width: 700px) {
+            width: auto;
+        }
     }
 </style>

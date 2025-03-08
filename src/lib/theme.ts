@@ -11,8 +11,16 @@ interface HSLState {
 class HSL extends Color {
     constructor(private state: HSLState) { super(); }
 
-    to_css_string(): string {
-        return `hsl(${this.state.hue}, ${this.state.saturation}%, ${this.state.lightness}%)`;
+    private get hue() { return this.state.hue; }
+    private get saturation() { return this.state.saturation; }
+    private get lightness() { return this.state.lightness; }
+
+    public to_css_string(): string {
+        return `hsl(
+            ${this.hue}, 
+            ${this.saturation}%, 
+            ${this.lightness}%
+        )`;
     }
 
     static gray({ lightness }: { lightness: number }) {
@@ -28,8 +36,11 @@ interface HoverableState {
 class Hoverable {
     constructor(private state: HoverableState) {}
 
+    private get unhovered() { return this.state.unhovered; }
+    private get hovered() { return this.state.hovered; }
+
     to_css_string({hovered}: {hovered: boolean}): string {
-        return hovered ? this.state.hovered.to_css_string() : this.state.unhovered.to_css_string();
+        return hovered ? this.hovered.to_css_string() : this.unhovered.to_css_string();
     }
 }
 

@@ -42,6 +42,10 @@
         margin: 0;
 
         list-style: none;
+
+        @media (max-width: 700px) {
+            padding-left: 0px;
+        }
     }
 
     .coursework-header-hovered {
