@@ -1,18 +1,13 @@
 <script lang="ts">
-    import Header from '$lib/ui/Header.svelte';
-    import { section } from '$lib/ui/Sections.svelte'
-    // iphone - 844 × 390 - ipad - 1080 x 810
+    import Header from '$lib/ui/header/Header.svelte';
+    import Academia from '$lib/ui/academia/Main.svelte';
+    import Industry from '$lib/ui/industry/Main.svelte';
 </script>
 
 <Header/>
 <main>
-    <section id="academia">
-        {@render section(true)}
-    </section>
-
-    <section id="industry">
-        {@render section(false)}
-    </section>
+    <Academia/>
+    <Industry/>
 </main>
 
 
@@ -25,6 +20,11 @@
 
         --text-weight-bold: 500;
         --text-weight-normal: 400;
+
+        /* Base font sizes for different screen sizes */
+        --root-font-size-desktop: 18px;
+        --root-font-size-tablet: 16px;
+        --root-font-size-mobile: 14px;
     }
 
     :global(body, html) {
@@ -32,6 +32,22 @@
         padding: 0;
         font-family: 'Roboto', sans-serif;
         background-color: var(--main-background);
+        font-size: var(--root-font-size-desktop);
+
+        /* Large screens */
+        @media screen and (min-width: 1200px) {
+            font-size: var(--root-font-size-desktop);
+        }
+
+        /* Tablet */
+        @media screen and (max-width: 1199px) and (min-width: 768px) {
+            font-size: var(--root-font-size-tablet);
+        }
+
+        /* Mobile */
+        @media screen and (max-width: 767px) {
+            font-size: var(--root-font-size-mobile);
+        }
     }
 
     main {
@@ -53,25 +69,4 @@
             padding: 20px;
         }
     }
-
-    section {
-        flex: 1;
-        box-sizing: border-box; 
-                
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        
-        border-radius: 12px;
-    }
-
-    section#academia {
-        background-color: var(--card-a-background);
-    }
-
-    section#industry {
-        background-color: var(--card-a-background);
-    }
-
 </style>
