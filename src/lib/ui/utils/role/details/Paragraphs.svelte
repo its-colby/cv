@@ -8,14 +8,14 @@
 
 </script>
 
-<div>
+<article>
     {#each paragraphs as paragraph}
         <p>{paragraph}</p>
     {/each}
-</div>
+</article>
 
 <style>
-    div {
+    article {
         display: flex;
         flex-direction: column;
 

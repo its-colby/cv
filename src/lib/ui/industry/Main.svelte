@@ -24,12 +24,16 @@
     <SectionHeading title="Industry" />
     <SectionItems>
         {#each industry_roles as role}
-            <li><Role 
-                heading={role_heading}
-                heading_data={role}
-                details={details}
-                details_data={role}
-            /></li>
+            <li>
+                <article>
+                    <Role 
+                        heading={role_heading}
+                        heading_data={role}
+                        details={details}
+                        details_data={role}
+                    />
+                </article>
+            </li>
         {/each}
     </SectionItems>
 </SectionContainer>

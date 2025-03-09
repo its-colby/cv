@@ -17,22 +17,28 @@
         contract={details.commitment}
         duration={details.duration}
     />
-    <DetailsHeading 
-        title="Responsibilities" 
-    />
-    <DetailsParagraphs 
-        paragraphs={[details.responsibilities]} 
-    />
-    <DetailsHeading 
-        title="Impact" 
-    />
-    <DetailsParagraphs 
-        paragraphs={[details.impact]} 
-    />
-    <DetailsHeading 
-        title="Notable Contributions" 
-    />
-    <DetailsParagraphs 
-        paragraphs={details.contributions} 
-    />
+    <section>
+        <DetailsHeading 
+            title="Responsibilities" 
+        />
+        <DetailsParagraphs 
+            paragraphs={[details.responsibilities]} 
+        />
+    </section>
+    <section>
+        <DetailsHeading 
+            title="Impact" 
+        />
+        <DetailsParagraphs 
+            paragraphs={[details.impact]} 
+        />
+    </section>
+    <section>
+        <DetailsHeading 
+            title="Notable Contributions" 
+        />
+        <DetailsParagraphs 
+            paragraphs={details.contributions} 
+        />
+    </section>
 </DetailsContainer>

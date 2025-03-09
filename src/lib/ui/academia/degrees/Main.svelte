@@ -4,32 +4,27 @@
 </script>
 
 <SubsectionContainer>
-    <div class="container">
+    <article>
 
-        <span class="label">
+        <header>
             <SubsectionHeading 
                 title="Degree" 
                 highlight={false} 
             />
-        </span>
+        </header>
 
-        <div class="degree-container">
-            <span class="degree-title">
-                A.B. Computer Science
-            </span>
-        
-            <span class="degree-school">
-                Brown University
-            </span>
-        </div>
+        <dl>
+            <dt>A.B. Computer Science</dt>
+            <dd>Brown University</dd>
+        </dl>
 
-    </div>
+    </article>
 </SubsectionContainer>
 
 <style lang="scss">
     @use '$lib/theme/screens.scss';
 
-    div.container {
+    article {
         display: flex;
 
         @include screens.desktop {
@@ -45,20 +40,21 @@
         }
     }
 
-    div.degree-container {
+    dl {
         display: flex;
         flex-direction: row;
         align-items: center;
         gap: 2rem;
     }
 
-    span {
+    dt, dd {
         font-weight: 400;
         font-size: 1.1rem;
         color: var(--text-neutral);
+        margin: 0;
     }
 
-    span.label {
+    header {
         width: 10.8rem;
     }
     

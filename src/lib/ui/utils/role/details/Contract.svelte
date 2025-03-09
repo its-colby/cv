@@ -10,13 +10,13 @@
 
 </script>
 
-<h4>
+<header>
     <span>{contract}</span>
     <span>{duration}</span>
-</h4>
+</header>
 
 <style>
-    h4 {
+    header {
         display: flex;
         flex-direction: row;
         align-items: center;

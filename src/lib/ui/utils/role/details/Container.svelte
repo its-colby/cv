@@ -8,14 +8,14 @@
 
 </script>
 
-<div>
+<section>
     {@render children()}
-</div>
+</section>
 
 <style lang="scss">
     @use '$lib/theme/screens.scss';
 
-    div {
+    section {
         display: flex;
         flex-direction: column;
 

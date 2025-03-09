@@ -9,26 +9,28 @@
 
 </script>
 
-<h3>
-    <Timestamp 
-        timestamp={course.date}
-        highlight={false}
-        --timestamp-color={"var(--text-neutral)"}
-        --timestamp-font-size={"1rem"}
-    />
-    <Occupation 
-        occupation={course.title}
-        highlight={false}
-        --occupation-color={"var(--text-neutral)"}
-        --occupation-font-size={"1rem"}
-        --occupation-font-weight={"400"}
-    />
-</h3>
+<article>
+    <header>
+        <Timestamp 
+            timestamp={course.date}
+            highlight={false}
+            --timestamp-color={"var(--text-neutral)"}
+            --timestamp-font-size={"1rem"}
+        />
+        <Occupation 
+            occupation={course.title}
+            highlight={false}
+            --occupation-color={"var(--text-neutral)"}
+            --occupation-font-size={"1rem"}
+            --occupation-font-weight={"400"}
+        />
+    </header>
+</article>
 
 <style lang="scss">
     @use '$lib/theme/screens.scss';
 
-    h3 {
+    header {
         display: flex;
         margin: 0;
 

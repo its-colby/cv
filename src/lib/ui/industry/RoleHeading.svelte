@@ -17,7 +17,7 @@
 </script>
 
 
-<h2>
+<header>
     <div>
         <Timestamp 
             timestamp={industry_role.date}
@@ -30,16 +30,18 @@
             --institution-width={"10.3rem"}
         />
     </div>
-    <Occupation 
-        occupation={industry_role.title}
-        highlight={highlight}
-    />
-</h2>
+    <h2>
+        <Occupation 
+            occupation={industry_role.title}
+            highlight={highlight}
+        />
+    </h2>
+</header>
 
 <style lang="scss">
     @use '$lib/theme/screens.scss';
 
-    h2 {
+    header {
         display: flex;
         margin: 0;
 
@@ -60,6 +62,10 @@
         align-items: center;
 
         gap: 0;
+    }
+
+    h2 {
+        margin: 0;
     }
     
 </style>

@@ -8,10 +8,10 @@
 
 </script>
 
-<h4>{title}</h4>
+<h1>{title}</h1>
 
 <style>
-    h4 {
+    h1 {
         font-size: 1rem;
         font-weight: 400;
         color: var(--text-brand);
