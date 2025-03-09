@@ -3,7 +3,7 @@
     import Timestamp from '$lib/ui/utils/role/heading/Timestamp.svelte';
     import Occupation from '$lib/ui/utils/role/heading/Occupation.svelte';
 
-    import { type ResearchRole, type TeachingRole } from '$lib/info';
+    import { ResearchRole, TeachingRole } from '$lib/cv';
 
     let { 
         role, 
@@ -28,14 +28,19 @@
     />
 </h3>
 
-<style>
+<style lang="scss">
+    @use '$lib/theme/screens.scss';
+
     h3 {
         display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin: 0px;
+        margin: 0;
 
-        @media (max-width: 700px) {
+        @include screens.desktop {
+            flex-direction: row;
+            align-items: center;
+        }
+
+        @include screens.mobile {
             flex-direction: column;
             align-items: flex-start;
         }

@@ -9,7 +9,7 @@
     import Details from "./Details.svelte";
     import RoleHeading from "./RoleHeading.svelte";
 
-    import { industry_roles, type IndustryRole } from "$lib/info";
+    import { industry_roles, IndustryRole } from "$lib/cv";
 </script>
 
 {#snippet details(role: IndustryRole)}

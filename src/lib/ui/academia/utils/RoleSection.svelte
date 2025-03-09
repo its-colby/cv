@@ -1,5 +1,6 @@
 <script lang="ts" generics="RoleType extends TeachingRole | ResearchRole">
-    import type { TeachingRole, ResearchRole } from '$lib/info';
+
+    import { TeachingRole, ResearchRole } from '$lib/cv';
 
     import type { Snippet } from 'svelte';
 

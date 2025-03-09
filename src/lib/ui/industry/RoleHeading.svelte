@@ -1,6 +1,6 @@
 <script lang="ts">
 
-    import { type IndustryRole } from '$lib/info';
+    import { IndustryRole } from '$lib/cv';
 
     import Timestamp from '$lib/ui/utils/role/heading/Timestamp.svelte';
     import Occupation from '$lib/ui/utils/role/heading/Occupation.svelte';
@@ -36,18 +36,19 @@
     />
 </h2>
 
-<style>
+<style lang="scss">
+    @use '$lib/theme/screens.scss';
 
     h2 {
         display: flex;
-        align-items: center;
-        margin: 0px;
+        margin: 0;
 
-        @media (min-width: 701px) {
+        @include screens.desktop {
             flex-direction: row;
+            align-items: center;
         }
 
-        @media (max-width: 700px) {
+        @include screens.mobile {
             flex-direction: column;
             align-items: flex-start;
         }
@@ -58,7 +59,7 @@
         flex-direction: row;
         align-items: center;
 
-        gap: 0px;
+        gap: 0;
     }
     
 </style>

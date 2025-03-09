@@ -1,4 +1,4 @@
-import { industry_roles, teaching_roles, research_roles } from '../src/lib/info';
+import { industry_roles, teaching_roles, research_roles } from '../src/lib/cv';
 import * as fs from 'fs';
 import markdownpdf from 'markdown-pdf';
 import path from 'path';

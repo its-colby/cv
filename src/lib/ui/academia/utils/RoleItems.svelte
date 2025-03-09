@@ -10,7 +10,9 @@
     {@render children()}
 </ul>
 
-<style>
+<style lang="scss">
+    @use '$lib/theme/screens.scss';
+
     ul {
         display: flex;
         flex-direction: column;
@@ -19,10 +21,13 @@
 
         gap: 1rem;
         padding-top: 1rem;
-        padding-left: 2.5rem;
         margin: 0;
 
-        @media (max-width: 700px) {
+        @include screens.desktop {
+            padding-left: 2.5rem;
+        }
+
+        @include screens.mobile {
             padding-left: 0;
         }
     }

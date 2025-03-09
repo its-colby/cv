@@ -11,7 +11,7 @@
 </main>
 
 
-<style>
+<style lang="scss">
     :root {
         --text-size-massive: 30px;
         --text-size-large: 20px;

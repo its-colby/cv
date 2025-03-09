@@ -1,6 +1,6 @@
 <script lang="ts">
 
-    import { type IndustryRole } from '$lib/info';
+    import { IndustryRole } from '$lib/cv';
 
     import Contract from '$lib/ui/utils/role/details/Contract.svelte';
     import DetailsHeading from '$lib/ui/utils/role/details/Heading.svelte';

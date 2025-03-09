@@ -12,17 +12,21 @@
     {@render children()}
 </div>
 
-<style>
+<style lang="scss">
+    @use '$lib/theme/screens.scss';
+
     div {
         display: flex;
         flex-direction: column;
 
         gap: 10px;
 
-        padding-left: 2rem;
-        padding-right: 2rem;
+        @include screens.desktop {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
 
-        @media (max-width: 700px) {
+        @include screens.mobile {
             padding-left: 0;
             padding-right: 0;
         }

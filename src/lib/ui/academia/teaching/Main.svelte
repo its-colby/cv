@@ -4,9 +4,7 @@
 
     import Details from './Details.svelte';
 
-    import type { TeachingRole } from '$lib/info';
-
-    import { teaching_roles } from '$lib/info';
+    import { TeachingRole, teaching_roles } from '$lib/cv';
 
 </script>
 

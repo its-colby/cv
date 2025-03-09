@@ -10,9 +10,7 @@
 
     import Details from './Details.svelte';
 
-    import type { ResearchRole } from '$lib/info';
-
-    import { research_roles } from '$lib/info';
+    import { research_roles, ResearchRole } from '$lib/cv';
 
 </script>
 

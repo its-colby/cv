@@ -160,7 +160,7 @@ const SHARED_HOVERABLES = {
 
 const DEFAULT_MODE = Mode.DARK;
 
-export const theme = new Theme({
+const theme = new Theme({
     mode: DEFAULT_MODE,
 
     css_properties: {
@@ -238,4 +238,5 @@ export const theme = new Theme({
         }),
     },
 });
-  
+
+export { theme };

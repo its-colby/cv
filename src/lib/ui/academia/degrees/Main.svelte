@@ -26,16 +26,21 @@
     </div>
 </SubsectionContainer>
 
-<style>
+<style lang="scss">
+    @use '$lib/theme/screens.scss';
 
     div.container {
         display: flex;
-        flex-direction: row;
-        align-items: center;
 
-        @media (max-width: 700px) {
-            align-items: flex-start;
+        @include screens.desktop {
+            flex-direction: row;
+            align-items: center;
+            gap: 0;
+        }
+
+        @include screens.mobile {
             flex-direction: column;
+            align-items: flex-start;
             gap: 0.5rem;
         }
     }

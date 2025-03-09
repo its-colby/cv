@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { type TeachingRole } from '$lib/info';
+    import { TeachingRole } from '$lib/cv';
 
     import DetailsContainer from '$lib/ui/utils/role/details/Container.svelte';
     import DetailsHeading from '$lib/ui/utils/role/details/Heading.svelte';

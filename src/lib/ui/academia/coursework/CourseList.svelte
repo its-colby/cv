@@ -2,7 +2,7 @@
 
     import Course from './Course.svelte';
 
-    import { courses } from '$lib/info';
+    import { courses } from '$lib/cv';
 
 </script>
 
@@ -14,19 +14,25 @@
     {/each}
 </ul>
 
-<style>
+<style lang="scss">
+    @use '$lib/theme/screens.scss';
+
     ul {
         display: flex;
         flex-direction: column;
 
-        gap: 0.5rem;
         padding-top: 1rem;
-        padding-left: 2.5rem;
+        
         margin: 0;
 
         list-style: none;
 
-        @media (max-width: 700px) {
+        @include screens.desktop {
+            padding-left: 2.5rem;
+            gap: 0.5rem;
+        }
+
+        @include screens.mobile {
             padding-left: 0px;
             gap: 0.8rem;
         }
