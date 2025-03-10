@@ -2,7 +2,6 @@
 
     import SectionContainer from "$lib/ui/utils/section/SectionContainer.svelte";
     import SectionHeading from "$lib/ui/utils/section/Heading.svelte";
-    import SectionItems from "$lib/ui/utils/section/SectionItems.svelte";
 
     import Degrees from "./degrees/Main.svelte";
     import Teaching from "./teaching/Main.svelte";
@@ -12,10 +11,23 @@
 
 <SectionContainer>
     <SectionHeading title="Academia" />
-    <SectionItems>
+    <ul>
         <li><Degrees/></li>
         <li><Teaching/></li>
         <li><Research/></li>
         <li><Coursework/></li>
-    </SectionItems>
+    </ul>
 </SectionContainer>
+
+<style>
+    ul {
+        display: flex;
+        flex-direction: column;
+
+        list-style: none;
+
+        gap: 1.5rem;
+        padding: 0;
+        padding-top: 1rem;
+    }
+</style>

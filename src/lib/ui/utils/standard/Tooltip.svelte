@@ -9,11 +9,43 @@
     }
 
     let { text = "", data = undefined, content, position = "above" } : Props = $props();
+
+    let tooltipElement: HTMLElement;
+    let tooltipTextElement: HTMLElement;
+
+    function adjustPosition() {
+        if (!tooltipElement || !tooltipTextElement) return;
+        
+        const bounds = tooltipElement.getBoundingClientRect();
+        const tooltipBounds = tooltipTextElement.getBoundingClientRect();
+        const viewport = window.innerWidth;
+        
+        // Reset transform and left position
+        tooltipTextElement.style.transform = 'translateX(-50%)';
+        tooltipTextElement.style.left = '50%';
+        
+        // Recalculate bounds after reset
+        const updatedBounds = tooltipTextElement.getBoundingClientRect();
+        
+        // Check if tooltip goes beyond right edge
+        if (updatedBounds.right > viewport) {
+            const overflow = updatedBounds.right - viewport;
+            tooltipTextElement.style.transform = `translateX(calc(-50% - ${overflow}px - 8px))`;
+        }
+        // Check if tooltip goes beyond left edge
+        else if (updatedBounds.left < 0) {
+            tooltipTextElement.style.transform = `translateX(calc(-50% - ${updatedBounds.left}px + 8px))`;
+        }
+    }
 </script>
 
-<div class="tooltip">
+<div class="tooltip" 
+    bind:this={tooltipElement} 
+    role="button"
+    tabindex="0"
+    onmouseenter={adjustPosition}>
     {@render content(data)}
-    <div class="tooltip-text {position}">{text}</div>
+    <div class="tooltip-text {position}" bind:this={tooltipTextElement}>{text}</div>
 </div>
 
 <style>
@@ -32,7 +64,7 @@
         color: var(--text-anti-contrast);
         padding: 4px 8px;
         border-radius: 4px;
-        font-size: 12px;
+        font-size: 0.8rem;
         white-space: nowrap;
         pointer-events: none;
         opacity: 0;

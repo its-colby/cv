@@ -22,18 +22,18 @@
         <Timestamp 
             timestamp={industry_role.date}
             highlight={highlight}
-            --timestamp-width={"7.5rem"}
+            style_class={"industry"}
         />
         <Institution 
             institution={industry_role.company}
             highlight={highlight}
-            --institution-width={"10.3rem"}
         />
     </div>
     <h2>
         <Occupation 
             occupation={industry_role.title}
             highlight={highlight}
+            style_class={"industry"}
         />
     </h2>
 </header>
@@ -60,8 +60,6 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-
-        gap: 0;
     }
 
     h2 {

@@ -23,6 +23,7 @@
 
 <style lang="scss">
     @use '$lib/theme/screens.scss';
+    @use '$lib/theme/fonts.scss';
 
     article {
         display: flex;
@@ -48,14 +49,14 @@
     }
 
     dt, dd {
-        font-weight: 400;
-        font-size: 1.1rem;
+        font-weight: var(--font-weight-base);
+        font-size: var(--font-size-medium);
         color: var(--text-neutral);
         margin: 0;
     }
 
     header {
-        width: 10.8rem;
+        width: 9.5rem;
     }
     
 </style>

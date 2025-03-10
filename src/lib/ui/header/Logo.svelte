@@ -6,10 +6,10 @@
 
 <style lang="scss">
     @use '$lib/theme/screens.scss';
-
+    @use '$lib/theme/fonts.scss';
+    
     h2 {
-        font-size: 18px;
-        font-weight: 500;
+        @extend %kinda-large-font;
         color: var(--text-neutral);
 
         @include screens.mobile {

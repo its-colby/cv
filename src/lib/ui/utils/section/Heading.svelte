@@ -4,12 +4,13 @@
 
 <h1>{title}</h1>
 
-<style>
+<style lang="scss">
+    @use '$lib/theme/fonts.scss';
+
     h1 {
         text-align: center;
 
-        font-size: 2rem;
-        font-weight: 500;
+        @extend %large-font;
 
         color: var(--text-neutral);
 

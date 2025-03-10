@@ -14,7 +14,7 @@
     div {
         display: flex;
         align-items: center;
-        gap: 40px;
+        gap: 1rem;
         
         @include screens.mobile {
             margin-left: auto;

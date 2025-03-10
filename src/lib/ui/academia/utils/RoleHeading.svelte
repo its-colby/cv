@@ -19,12 +19,12 @@
     <Timestamp 
         timestamp={role.date}
         highlight={highlight}
-        --timestamp-color={"var(--text-neutral)"}
+        style_class={"academia"}
     />
     <Occupation 
         occupation={role.title}
         highlight={highlight}
-        --occupation-color={"var(--text-brand)"}
+        style_class={"academia"}
     />
 </h3>
 

@@ -1,11 +1,5 @@
 <script lang="ts">
-
-    let { 
-        paragraphs 
-    }: { 
-        paragraphs: string[] 
-    } = $props();
-
+    let { paragraphs }: { paragraphs: string[] } = $props();
 </script>
 
 <article>
@@ -14,17 +8,19 @@
     {/each}
 </article>
 
-<style>
+<style lang="scss">
+    @use '$lib/theme/fonts.scss';
+    @use '$lib/theme/spacing.scss';
+    
     article {
         display: flex;
         flex-direction: column;
 
-        gap: 10px;
+        gap: 0.5rem;
     }
 
     p {
-        font-size: 1rem;
-        font-weight: 400;
+        @extend %base-font;
         color: var(--text-neutral);
         margin: 0;
     }

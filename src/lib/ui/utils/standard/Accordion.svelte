@@ -66,9 +66,4 @@
     summary::-webkit-details-marker {
         display: none;
     }
-
-    div {
-        margin-top: 15px;
-        margin-bottom: 10px;
-    }
 </style>

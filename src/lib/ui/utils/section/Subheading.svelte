@@ -16,10 +16,11 @@
     {title}
 </h2>
 
-<style>
+<style lang="scss">
+    @use '$lib/theme/fonts.scss';
+
     h2 {
-        font-size: 1.5rem;
-        font-weight: 500;
+        @extend %kinda-large-font;
         color: var(--text-neutral);
         margin: 0;
     }

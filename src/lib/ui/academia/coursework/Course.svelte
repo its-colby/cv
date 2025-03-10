@@ -14,15 +14,12 @@
         <Timestamp 
             timestamp={course.date}
             highlight={false}
-            --timestamp-color={"var(--text-neutral)"}
-            --timestamp-font-size={"1rem"}
+            style_class={"course"}
         />
         <Occupation 
             occupation={course.title}
             highlight={false}
-            --occupation-color={"var(--text-neutral)"}
-            --occupation-font-size={"1rem"}
-            --occupation-font-weight={"400"}
+            style_class={"course"}
         />
     </header>
 </article>

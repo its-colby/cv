@@ -1,19 +1,14 @@
 <script lang="ts">
-
-    let { 
-        title 
-    }: { 
-        title: string 
-    } = $props();
-
+    let { title }: { title: string } = $props();
 </script>
 
 <h1>{title}</h1>
 
-<style>
+<style lang="scss">
+    @use '$lib/theme/fonts.scss';
+
     h1 {
-        font-size: 1rem;
-        font-weight: 400;
+        @extend %base-font;
         color: var(--text-brand);
 
         margin: 0;

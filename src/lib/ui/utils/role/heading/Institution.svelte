@@ -16,32 +16,14 @@
 
 <style>
     span {
+        font-size: var(--font-size-medium);
+        font-weight: var(--font-weight-base);
+        color: var(--text-neutral);
 
-        font-size: var(
-            --occupation-font-size, 
-            1.1rem
-        );
-
-        font-weight: var(
-            --occupation-font-weight, 
-            400
-        );
-        
-        color: var(
-            --occupation-color, 
-            var(--text-neutral)
-        );
-
-        width: var(
-            --institution-width, 
-            150px
-        );
+        width: 10.3rem;
     }
 
     span.highlighted {
-        color: var(
-            --occupation-highlight-color, 
-            var(--text-contrast)
-        );
+        color: var(--text-contrast);
     }
 </style>

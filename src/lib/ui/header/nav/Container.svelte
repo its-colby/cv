@@ -17,6 +17,7 @@
         list-style-type: none;
         display: flex;
         align-items: center;
+        gap: 1rem;
     }
 
     nav {

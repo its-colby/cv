@@ -12,42 +12,14 @@
 
 
 <style lang="scss">
-    :root {
-        --text-size-massive: 30px;
-        --text-size-large: 20px;
-        --text-size-medium: 18px;
-        --text-size-small: 16px;
-
-        --text-weight-bold: 500;
-        --text-weight-normal: 400;
-
-        /* Base font sizes for different screen sizes */
-        --root-font-size-desktop: 18px;
-        --root-font-size-tablet: 16px;
-        --root-font-size-mobile: 14px;
-    }
+    @use '$lib/theme/fonts.scss';
+    @use '$lib/theme/screens.scss';
 
     :global(body, html) {
         margin: 0;
         padding: 0;
-        font-family: 'Roboto', sans-serif;
         background-color: var(--main-background);
-        font-size: var(--root-font-size-desktop);
-
-        /* Large screens */
-        @media screen and (min-width: 1200px) {
-            font-size: var(--root-font-size-desktop);
-        }
-
-        /* Tablet */
-        @media screen and (max-width: 1199px) and (min-width: 768px) {
-            font-size: var(--root-font-size-tablet);
-        }
-
-        /* Mobile */
-        @media screen and (max-width: 767px) {
-            font-size: var(--root-font-size-mobile);
-        }
+        @extend %base-font;
     }
 
     main {
@@ -64,7 +36,7 @@
         width: 100%;
         margin: 0;
 
-        @media (max-width: 800px) {
+        @include screens.tablet {
             flex-direction: column;
             padding: 20px;
         }

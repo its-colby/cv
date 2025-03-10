@@ -1,4 +1,7 @@
 <script lang="ts">
+    import Tooltip from "$lib/ui/utils/standard/Tooltip.svelte";
+    import { Download } from "lucide-svelte";
+
     const download_file = () => {
         const file_path = '/colby_anderson.cv.pdf';
         const link = document.createElement('a');
@@ -10,20 +13,29 @@
     };
 </script>
 
-<button onclick={download_file}>
-    Download PDF
-</button>
+{#snippet content()}
+    <button onclick={download_file}>
+        Download PDF
+        <Download size={18} />
+    </button>
+{/snippet}
+
+<Tooltip text="Download a PDF version of this CV" {content} position="below"/>
 
 <style>
     button {
         color: var(--text-neutral);
-        font-weight: 500;
-        font-size: 18px;
+        font-size: var(--font-size-medium);
+        font-weight: var(--font-weight-bold);
         text-decoration: none;
-        margin: 0 10px;
+        padding: 0 0.5rem;
         background: none;
         border: none;
         cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
     }
 
     button:hover {

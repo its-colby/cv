@@ -12,7 +12,8 @@
 
 <style lang="scss">
     @use '$lib/theme/screens.scss';
-
+    @use '$lib/theme/spacing.scss';
+    
     ul {
         display: flex;
         flex-direction: column;
@@ -24,7 +25,7 @@
         margin: 0;
 
         @include screens.desktop {
-            padding-left: 2.5rem;
+            padding-left: spacing.$indent;
         }
 
         @include screens.mobile {

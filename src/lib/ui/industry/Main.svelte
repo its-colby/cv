@@ -2,7 +2,6 @@
 
     import SectionContainer from "$lib/ui/utils/section/SectionContainer.svelte";
     import SectionHeading from "$lib/ui/utils/section/Heading.svelte";
-    import SectionItems from "$lib/ui/utils/section/SectionItems.svelte";
 
     import Role from "$lib/ui/utils/role/Main.svelte";
 
@@ -22,7 +21,7 @@
 
 <SectionContainer>
     <SectionHeading title="Industry" />
-    <SectionItems>
+    <ul>
         {#each industry_roles as role}
             <li>
                 <article>
@@ -35,5 +34,18 @@
                 </article>
             </li>
         {/each}
-    </SectionItems>
+    </ul>
 </SectionContainer>
+
+<style>
+    ul {
+        display: flex;
+        flex-direction: column;
+
+        list-style: none;
+
+        gap: 0.5rem;
+        padding: 0;
+        padding-top: 1rem;
+    }
+</style>

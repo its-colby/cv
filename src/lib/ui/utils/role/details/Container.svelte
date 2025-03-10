@@ -1,11 +1,5 @@
 <script lang="ts">
-
-    let { 
-        children 
-    }: { 
-        children: any 
-    } = $props();
-
+    let { children }: { children: any } = $props();
 </script>
 
 <section>
@@ -14,16 +8,18 @@
 
 <style lang="scss">
     @use '$lib/theme/screens.scss';
+    @use '$lib/theme/spacing.scss';
 
     section {
         display: flex;
         flex-direction: column;
 
-        gap: 10px;
+        gap: 0.5rem;
+        padding-top: 0.5rem;
 
         @include screens.desktop {
-            padding-left: 2rem;
-            padding-right: 2rem;
+            padding-left: spacing.$indent;
+            padding-right: spacing.$indent;
         }
 
         @include screens.mobile {

@@ -17,11 +17,11 @@
 
     header {
         background-color: var(--header-background);
-        padding: 10px 30px;
+        padding: 0.5rem 1.5rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        min-height: 40px;
+        height: 3rem;
         top: 0;
         position: sticky;
         z-index: 100;

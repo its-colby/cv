@@ -1,6 +1,5 @@
 <script lang="ts">
-
-    import Dropdown from '$lib/ui/utils/standard/Dropdown.svelte';
+    import Tooltip from '$lib/ui/utils/standard/Tooltip.svelte';
     import { Copy } from 'lucide-svelte';
     import { fade } from 'svelte/transition';
 
@@ -17,44 +16,38 @@
 
 </script>
 
-{#snippet contact_nav()}
-    <span>Contact</span>
-{/snippet}
-
-{#snippet email_dropdown()}
-<div class="email-dropdown">
-    <span>{email}</span>
-    <Copy size={18} />
-    {#if just_copied}
+{#snippet content()}
+    <button onclick={copy_email}>
+        {email}
+        <Copy size={18} />
+        {#if just_copied}
         <div class="copied-text" transition:fade={{ duration: 1 }}>
             Copied to clipboard!
         </div>
     {/if}
-</div>
+    </button>
+    
 {/snippet}
 
-<Dropdown
-    on_click={copy_email}
-    header={contact_nav}
-    row={email_dropdown}
-/>
+<Tooltip text="Copy email to clipboard" {content} position="below"/>
 
 
 <style>
-    .email-dropdown {
+    button {
         display: flex;
         align-items: center;
-        gap: 6px;
-        color: var(--text-neutral-color);
+        gap: 0.5rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--text-neutral);
+        font-size: var(--font-size-medium);
+        font-weight: var(--font-weight-bold);
+        padding: 0 0.5rem;
     }
 
-    .email-dropdown:hover {
-        color: var(--text-neutral-color-hovered);
-    }
-
-    .email-dropdown span {
-        font-size: 16px;
-        font-weight: 400;
+    button:hover {
+        color: var(--text-neutral-hovered);
     }
 
     .copied-text {
@@ -62,22 +55,7 @@
         top: 100%;
         left: 50%;
         transform: translateX(-50%);
-        background-color: var(--header-background-color);
-        padding: 4px 8px;
-        border-radius: 4px;
-        font-size: 14px;
-        margin-top: 4px;
-    }
-
-    span {
-        color: var(--text-neutral);
-        font-weight: 500;
-        font-size: 18px;
-        text-decoration: none;
-        margin: 0 10px;
-    }
-
-    span:hover {
-        color: var(--text-neutral-hovered);
+        font-size: 0.8rem;
+        margin-top: 2rem;
     }
 </style>

@@ -15,17 +15,20 @@
     <span>{duration}</span>
 </header>
 
-<style>
+<style lang="scss">
+    @use '$lib/theme/fonts.scss';
+    @use '$lib/theme/spacing.scss';
+
+    
     header {
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: 20px;
+        gap: 1rem;
 
-        font-size: 1rem;
-        font-weight: 400;
+        @extend %base-font;
         color: var(--text-brand);
 
-        margin: 0px;
+        margin: 0;
     }
 </style>

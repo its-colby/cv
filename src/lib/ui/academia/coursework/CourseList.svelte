@@ -16,24 +16,26 @@
 
 <style lang="scss">
     @use '$lib/theme/screens.scss';
+    @use '$lib/theme/spacing.scss';
+    @use "sass:map";
 
     ul {
         display: flex;
         flex-direction: column;
 
-        padding-top: 1rem;
+        padding-top: 0.5rem;
         
         margin: 0;
 
         list-style: none;
 
         @include screens.desktop {
-            padding-left: 2.5rem;
+            padding-left: spacing.$indent;
             gap: 0.5rem;
         }
 
         @include screens.mobile {
-            padding-left: 0px;
+            padding-left: 0;
             gap: 0.8rem;
         }
     }

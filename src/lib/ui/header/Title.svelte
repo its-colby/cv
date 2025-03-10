@@ -8,8 +8,8 @@
     h1 {
         position: static;
         transform: none;
-        font-size: 20px;
-        font-weight: 500;
+        font-size: var(--font-size-medium);
+        font-weight: var(--font-weight-bold);
         color: var(--text-neutral);
         margin: 0;
     }

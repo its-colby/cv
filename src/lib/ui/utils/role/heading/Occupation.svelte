@@ -2,41 +2,35 @@
 
     let { 
         occupation, 
+        style_class,
         highlight = $bindable(false) 
     }: { 
         occupation: string, 
+        style_class: "course" | "industry" | "academia",
         highlight?: boolean 
     } = $props();
 
 </script>
 
-<span class={highlight ? 'highlighted' : ''}>
+<span class:highlighted={highlight} class={style_class}>
     {occupation}
 </span>
 
-<style>
-    span {
+<style lang="scss">
+    @use '$lib/theme/fonts.scss';
 
-        font-size: var(
-            --occupation-font-size, 
-            1.2rem
-        );
+    span.course {
+        @extend %base-font;
+        color: var(--text-neutral);
+    }
 
-        font-weight: var(
-            --occupation-font-weight, 
-            500
-        );
-        
-        color: var(
-            --occupation-color, 
-            var(--text-brand)
-        );
+    span.industry, span.academia {
+        font-size: var(--font-size-medium);
+        font-weight: var(--font-weight-bold);
+        color: var(--text-brand);
     }
 
     span.highlighted {
-        color: var(
-            --occupation-highlight-color, 
-            var(--text-contrast)
-        );
+        color: var(--text-contrast);
     }
 </style>

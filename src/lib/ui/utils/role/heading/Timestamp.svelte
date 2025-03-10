@@ -2,45 +2,42 @@
 
     let { 
         timestamp, 
-        highlight = $bindable(false) 
+        highlight = $bindable(false),
+        style_class
     }: { 
         timestamp: string, 
-        highlight?: boolean 
+        highlight?: boolean,
+        style_class: "course" | "industry" | "academia" 
     } = $props();
 
 </script>
 
-<time class={highlight ? 'highlighted' : ''}>
+<time class:highlighted={highlight} class={style_class}>
     {timestamp}
 </time>
 
 <style>
     time {
-        font-size: var(
-            --timestamp-font-size, 
-            1.1rem
-        );
+        font-weight: var(--font-weight-base);
+        color: var(--text-neutral);
+    }
 
-        font-weight: var(
-            --timestamp-font-weight, 
-            400
-        );
+    time.course {
+        font-size: var(--font-size-regular);
+        width: 8.3rem;
+    }
 
-        color: var(
-            --timestamp-color, 
-            var(--text-neutral)
-        );
+    time.academia {
+        font-size:var(--font-size-medium);
+        width: 8.3rem;
+    }
 
-        width: var(
-            --timestamp-width, 
-            8.3rem
-        );
+    time.industry {
+        font-size:var(--font-size-medium);
+        width: 7.5rem;
     }
 
     time.highlighted {
-        color: var(
-            --timestamp-highlight-color, 
-            var(--text-contrast)
-        );
+        color: var(--text-contrast);
     }
 </style>

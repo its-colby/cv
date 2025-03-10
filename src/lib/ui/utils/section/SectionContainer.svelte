@@ -12,17 +12,20 @@
     {@render children()}
 </section>
 
-<style>
+<style lang="scss">
+    @use '$lib/theme/spacing.scss';
+    @use "sass:map";
+
     section {
         flex: 1;
         box-sizing: border-box; 
                 
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-left: spacing.$indent;
+        padding-right: spacing.$indent;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
         
-        border-radius: 12px;
+        border-radius: 0.66rem;
 
         background-color: var(--card-a-background);
     }
