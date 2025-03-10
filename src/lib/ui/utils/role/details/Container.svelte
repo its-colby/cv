@@ -15,7 +15,8 @@
         flex-direction: column;
 
         gap: 0.5rem;
-        padding-top: 0.5rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
 
         @include screens.desktop {
             padding-left: spacing.$indent;
