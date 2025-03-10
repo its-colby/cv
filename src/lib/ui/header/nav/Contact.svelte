@@ -55,8 +55,10 @@
         }
     }
 
-    button:hover {
-        color: var(--text-neutral-hovered);
+    @media (hover: hover) {
+        button:hover {
+            color: var(--text-neutral-hovered);
+        }
     }
 
     .copied-text {
