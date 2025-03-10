@@ -10,6 +10,8 @@
 
     let { text = "", data = undefined, content, position = "above" } : Props = $props();
 
+    const has_hover = typeof window !== 'undefined' ? window.matchMedia('(hover: hover)').matches : false;
+
     let tooltipElement: HTMLElement;
     let tooltipTextElement: HTMLElement;
 
@@ -40,6 +42,7 @@
 </script>
 
 <div class="tooltip" 
+    class:no-hover={!has_hover}
     bind:this={tooltipElement} 
     role="button"
     tabindex="0"
@@ -82,5 +85,15 @@
 
     .tooltip:hover .tooltip-text {
         opacity: 1;
+    }
+
+    .no-hover .tooltip-text {
+        display: none;
+    }
+
+    @media (hover: none) {
+        .tooltip-text {
+            display: none;
+        }
     }
 </style>
