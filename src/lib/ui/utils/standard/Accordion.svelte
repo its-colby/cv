@@ -19,8 +19,8 @@
     let hovered: boolean = $state(false);
     let detailsElement: HTMLDetailsElement;
     
-    // Check if device supports hover
-    const has_hover = window.matchMedia('(hover: hover)').matches;
+    // Check if device supports hover, safely handling SSR
+    const has_hover = typeof window !== 'undefined' ? window.matchMedia('(hover: hover)').matches : false;
     
     function toggle(event: Event) { 
         event.preventDefault();
