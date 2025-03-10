@@ -1,13 +1,11 @@
 <script lang="ts">
     import Controls from './Controls.svelte';
-    import Title from './Title.svelte';
     import Logo from './Logo.svelte';
 </script>
 
 
 <header>
     <Logo />
-    <Title />
     <Controls />
 </header>
 

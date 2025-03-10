@@ -2,7 +2,10 @@
 
 </script>
 
-<h2>Colby Anderson</h2>
+<h2>
+    <span class="desktop">Colby's Curriculum Vitae</span>
+    <span class="mobile">Colby's CV</span>
+</h2>
 
 <style lang="scss">
     @use '$lib/theme/screens.scss';
@@ -17,6 +20,16 @@
             left: 50%;
             transform: translateX(-50%);
             margin: 0;
+
+            .desktop {
+                display: none;
+            }
+        }
+
+        @include screens.desktop {
+            .mobile {
+                display: none;
+            }
         }
     }
 </style>

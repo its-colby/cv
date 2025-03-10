@@ -19,10 +19,21 @@
     let hovered: boolean = $state(false);
     let detailsElement: HTMLDetailsElement;
     
+    // Check if device supports hover
+    const has_hover = window.matchMedia('(hover: hover)').matches;
+    
     function toggle(event: Event) { 
         event.preventDefault();
         open = !open;
         if (detailsElement) detailsElement.open = open;
+    }
+
+    function handle_mouse_enter() {
+        if (has_hover) hovered = true;
+    }
+
+    function handle_mouse_leave() {
+        if (has_hover) hovered = false;
     }
 </script>
 
@@ -31,8 +42,8 @@
 
     <summary 
         onclick={toggle}
-        onmouseenter={() => hovered = true}
-        onmouseleave={() => hovered = false}
+        onmouseenter={handle_mouse_enter}
+        onmouseleave={handle_mouse_leave}
     >
         {@render header(header_data, hovered)}
         {#if open}
@@ -59,8 +70,10 @@
         color: var(--chevron-color);
     }
 
-    summary:hover {
-        color: var(--chevron-color-hovered);
+    @media (hover: hover) {
+        summary:hover {
+            color: var(--chevron-color-hovered);
+        }
     }
 
     summary::-webkit-details-marker {
