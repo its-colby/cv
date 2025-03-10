@@ -32,7 +32,9 @@
 <Tooltip text="Copy email to clipboard" {content} position="below"/>
 
 
-<style>
+<style lang="scss">
+    @use '$lib/theme/screens.scss';
+
     button {
         display: flex;
         align-items: center;
@@ -43,7 +45,14 @@
         color: var(--text-neutral);
         font-size: var(--font-size-medium);
         font-weight: var(--font-weight-bold);
-        padding: 0 0.5rem;
+
+        @include screens.desktop {
+            padding: 0 0.5rem;
+        }
+
+        @include screens.mobile {
+            padding: 0;
+        }
     }
 
     button:hover {

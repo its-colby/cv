@@ -22,7 +22,9 @@
 
 <Tooltip text="Download a PDF version of this CV" {content} position="below"/>
 
-<style>
+<style lang="scss">
+    @use '$lib/theme/screens.scss';
+
     button {
         color: var(--text-neutral);
         font-size: var(--font-size-medium);
@@ -36,6 +38,10 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
+
+        @include screens.mobile {
+            display: none;
+        }
     }
 
     button:hover {

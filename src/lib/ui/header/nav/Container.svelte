@@ -18,11 +18,11 @@
         display: flex;
         align-items: center;
         gap: 1rem;
-    }
+        margin: 0;
+        padding: 0;
 
-    nav {
         @include screens.mobile {
-            display: none;
+            gap: 0;
         }
     }
 </style>

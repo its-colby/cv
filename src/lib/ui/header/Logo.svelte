@@ -16,9 +16,9 @@
         color: var(--text-neutral);
 
         @include screens.mobile {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+            // position: absolute;
+            // left: 50%;
+            // transform: translateX(-50%);
             margin: 0;
 
             .desktop {
