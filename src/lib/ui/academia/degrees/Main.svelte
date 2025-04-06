@@ -8,15 +8,24 @@
 
         <header>
             <SubsectionHeading 
-                title="Degree" 
+                title="Degrees" 
                 highlight={false} 
             />
         </header>
 
-        <dl>
-            <dt>A.B. Computer Science</dt>
-            <dd>Brown University</dd>
-        </dl>
+        <div>
+            <dl>
+                <dt>A.B. Computer Science</dt>
+                <dd>Brown University</dd>
+            </dl>
+            <dl>
+                <dt class="foo">
+                    <span>M.S. Computer Science</span>
+                    <span>(in progress)</span>
+                </dt>
+                <dd>Brown University</dd>
+            </dl>
+        </div>
 
     </article>
 </SubsectionContainer>
@@ -25,12 +34,23 @@
     @use '$lib/theme/screens.scss';
     @use '$lib/theme/fonts.scss';
 
+    dt.foo {
+        display: flex;
+        flex-direction: column;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
     article {
         display: flex;
 
         @include screens.desktop {
             flex-direction: row;
-            align-items: center;
+            align-items: flex-start;
             gap: 0;
         }
 
@@ -44,8 +64,12 @@
     dl {
         display: flex;
         flex-direction: row;
-        align-items: center;
+        align-items: flex-start;
         gap: 2rem;
+    }
+
+    dt {
+        flex: 1;
     }
 
     dt, dd {
