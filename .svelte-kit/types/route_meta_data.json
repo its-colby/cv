@@ -2,5 +2,14 @@
 	"/": [
 		"src/routes/+layout.ts",
 		"src/routes/+layout.ts"
+	],
+	"/cv": [
+		"src/routes/+layout.ts"
+	],
+	"/gallery": [
+		"src/routes/+layout.ts"
+	],
+	"/home": [
+		"src/routes/+layout.ts"
 	]
 }

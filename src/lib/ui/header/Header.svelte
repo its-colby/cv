@@ -1,15 +1,22 @@
 <script lang="ts">
     import Logo from './Logo.svelte';
-    import Nav from './nav/Container.svelte';
-    import ColorThemeToggle from '$lib/ui/utils/standard/ColorThemeToggle.svelte';
+    import ColorThemeToggle from '$lib/ui/utils/ColorThemeToggle.svelte';
+    import { page } from '$app/stores';
+
+    $: currentPath = $page.url.pathname;
 </script>
 
 
 <header>
     <div class="desktop">
         <Logo />
+        <nav class="navigation">
+            <a href="/home" class="nav-link" class:active={currentPath === '/home'}>Home</a>
+            <a href="/cv" class="nav-link" class:active={currentPath === '/cv'}>CV</a>
+            <a href="/gallery" class="nav-link" class:active={currentPath === '/gallery'}>Gallery</a>
+            <a href="/blog" class="nav-link" class:active={currentPath === '/blog'}>Blog</a>
+        </nav>
         <div class="controls">
-            <Nav />
             <ColorThemeToggle size={25}/>
         </div>
     </div>
@@ -18,7 +25,12 @@
             <Logo />
             <ColorThemeToggle size={25}/>
         </div>
-        <Nav />
+        <nav class="mobile-navigation">
+            <a href="/home" class="nav-link" class:active={currentPath === '/home'}>Home</a>
+            <a href="/cv" class="nav-link" class:active={currentPath === '/cv'}>CV</a>
+            <a href="/gallery" class="nav-link" class:active={currentPath === '/gallery'}>Gallery</a>
+            <a href="/blog" class="nav-link" class:active={currentPath === '/blog'}>Blog</a>
+        </nav>
     </div>
 </header>
 
@@ -36,6 +48,11 @@
         @include screens.mobile {
             position: relative;
         }
+    }
+
+    a {
+        color: var(--text-neutral);
+        text-decoration: none;
     }
 
     .desktop {
@@ -72,6 +89,34 @@
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
+        }
+
+        .mobile-navigation {
+            display: flex;
+            gap: 1rem;
+            width: 100%;
+            justify-content: center;
+
+            .nav-link {
+                color: var(--text-secondary);
+                text-decoration: none;
+                font-weight: 500;
+                padding: 0.5rem 1rem;
+                border-radius: 6px;
+                transition: all 0.2s ease;
+                flex: 1;
+                text-align: center;
+
+                &:hover {
+                    color: var(--text-primary);
+                    background-color: var(--hover-background);
+                }
+
+                &.active {
+                    color: var(--accent-color);
+                    background-color: var(--accent-background);
+                }
+            }
         }
     }
 </style>
