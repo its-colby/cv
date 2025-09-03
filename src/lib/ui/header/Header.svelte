@@ -1,48 +1,61 @@
 <script lang="ts">
     import Logo from './Logo.svelte';
     import ColorThemeToggle from '$lib/ui/utils/ColorThemeToggle.svelte';
-    import { page } from '$app/stores';
+    import { page } from '$app/state';
 
-    $: currentPath = $page.url.pathname;
+    $: currentPath = page.url.pathname;
+
+    const navItems = [
+        { href: '/home', label: 'Home' },
+        { href: '/cv', label: 'CV' },
+        { href: '/gallery', label: 'Gallery' },
+        { href: '/blog', label: 'Blog' }
+    ];
 </script>
 
+{#snippet navLink(href: string, label: string, isMobile: boolean = false)}
+    <a {href} class:active={currentPath === href} class:mobile={isMobile}>
+        {label}
+    </a>
+{/snippet}
 
 <header>
-    <div class="desktop">
+    <section class="desktop">
         <Logo />
-        <nav class="navigation">
-            <a href="/home" class="nav-link" class:active={currentPath === '/home'}>Home</a>
-            <a href="/cv" class="nav-link" class:active={currentPath === '/cv'}>CV</a>
-            <a href="/gallery" class="nav-link" class:active={currentPath === '/gallery'}>Gallery</a>
-            <a href="/blog" class="nav-link" class:active={currentPath === '/blog'}>Blog</a>
-        </nav>
-        <div class="controls">
+        <div class="right-section">
+            <nav>
+                {#each navItems as item}
+                    {@render navLink(item.href, item.label)}
+                {/each}
+            </nav>
             <ColorThemeToggle size={25}/>
         </div>
-    </div>
-    <div class="mobile">
+    </section>
+    
+    <section class="mobile">
         <div class="top">
             <Logo />
             <ColorThemeToggle size={25}/>
         </div>
-        <nav class="mobile-navigation">
-            <a href="/home" class="nav-link" class:active={currentPath === '/home'}>Home</a>
-            <a href="/cv" class="nav-link" class:active={currentPath === '/cv'}>CV</a>
-            <a href="/gallery" class="nav-link" class:active={currentPath === '/gallery'}>Gallery</a>
-            <a href="/blog" class="nav-link" class:active={currentPath === '/blog'}>Blog</a>
+        <nav>
+            {#each navItems as item}
+                {@render navLink(item.href, item.label, true)}
+            {/each}
         </nav>
-    </div>
+    </section>
 </header>
 
 
 <style lang="scss">
     @use '$lib/theme/screens.scss';
+    @use '$lib/theme/spacing.scss';
+    @use '$lib/theme/fonts.scss';
 
     header {
         background-color: var(--header-background);
-        padding: 0.5rem 1.5rem;
-        top: 0;
+        padding: 0.5rem spacing.$indent;
         position: sticky;
+        top: 0;
         z-index: 100;
 
         @include screens.mobile {
@@ -50,12 +63,7 @@
         }
     }
 
-    a {
-        color: var(--text-neutral);
-        text-decoration: none;
-    }
-
-    .desktop {
+    section.desktop {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -65,58 +73,56 @@
             display: none;
         }
 
-        .controls {
+        .right-section {
             display: flex;
-            flex-direction: row;
             align-items: center;
-            gap: 1rem;
+            gap: 2rem;
+
+            nav {
+                display: flex;
+                gap: 1.5rem;
+            }
         }
     }
 
-    .mobile {
+    section.mobile {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
+        gap: spacing.$indent;
 
         @include screens.desktop {
             display: none;
         }
 
         .top {
-            width: 100%;
             display: flex;
-            flex-direction: row;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
+            width: 100%;
         }
 
-        .mobile-navigation {
+        nav {
             display: flex;
             gap: 1rem;
-            width: 100%;
             justify-content: center;
-
-            .nav-link {
-                color: var(--text-secondary);
-                text-decoration: none;
-                font-weight: 500;
-                padding: 0.5rem 1rem;
-                border-radius: 6px;
-                transition: all 0.2s ease;
-                flex: 1;
-                text-align: center;
-
-                &:hover {
-                    color: var(--text-primary);
-                    background-color: var(--hover-background);
-                }
-
-                &.active {
-                    color: var(--accent-color);
-                    background-color: var(--accent-background);
-                }
-            }
+            width: 100%;
         }
+    }
+
+    a.active {
+        color: var(--text-contrast);
+        text-decoration: underline;
+    }
+
+    a:hover {
+        color: var(--text-contrast);
+    }
+
+    a {
+        font-size: var(--font-size-regular);
+        color: var(--text-neutral);
+        text-decoration: none;
+        font-weight: var(--font-weight-bold);
+        transition: all 0.2s ease;
     }
 </style>

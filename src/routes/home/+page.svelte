@@ -4,34 +4,49 @@
 
 <Header/>
 <main>
-    <div class="home-content">
-        <section class="hero">
-            <h1>Welcome</h1>
-            <p class="intro">
-                This is the home page of my personal website. Navigate through the sections to explore my CV and gallery.
+    <article>
+        <header>
+            <h1>About Me</h1>
+        </header>
+        
+        <section>
+            <p>
+                Welcome to my personal website. I'm passionate about technology, research, and continuous learning. 
+                This space serves as a window into my professional journey, academic pursuits, and creative endeavors.
+            </p>
+            
+            <p>
+                Throughout my career, I've been driven by curiosity and the desire to solve complex problems. 
+                Whether working in industry roles, conducting research, or teaching, I strive to make meaningful 
+                contributions while constantly expanding my knowledge and skills.
+            </p>
+            
+            <p>
+                My background spans multiple domains, allowing me to bring diverse perspectives to every project. 
+                I believe in the power of interdisciplinary collaboration and the importance of bridging theory 
+                with practical application.
+            </p>
+            
+            <p>
+                When I'm not immersed in professional work, I enjoy exploring new technologies, contributing to 
+                open-source projects, and sharing knowledge with the community. I'm always eager to connect with 
+                like-minded individuals and discuss innovative ideas.
+            </p>
+            
+            <p>
+                Feel free to explore my CV to learn more about my professional experience and educational background, 
+                or check out the gallery to see some of my projects and creative work. I'm always open to new 
+                opportunities and meaningful conversations.
             </p>
         </section>
-        
-        <section class="quick-links">
-            <h2>Quick Links</h2>
-            <div class="links-grid">
-                <a href="/cv" class="link-card">
-                    <h3>CV</h3>
-                    <p>View my professional experience, education, and achievements</p>
-                </a>
-                <a href="/gallery" class="link-card">
-                    <h3>Gallery</h3>
-                    <p>Explore my projects and creative work</p>
-                </a>
-            </div>
-        </section>
-    </div>
+    </article>
 </main>
 
 <style lang="scss">
     @use '$lib/theme/fonts.scss';
     @use '$lib/theme/screens.scss';
     @use '$lib/theme/spacing.scss';
+    @use "sass:map";
 
     :global(body, html) {
         margin: 0;
@@ -42,86 +57,58 @@
 
     main {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        justify-content: center;
         box-sizing: border-box;
-        padding: 40px;
-        width: 100%;
+        padding: 2rem spacing.$indent;
         min-height: calc(100vh - 4rem);
 
-        @include screens.tablet {
-            padding: 20px;
+        @include screens.mobile {
+            padding: spacing.$indent;
         }
     }
 
-    .home-content {
-        max-width: 800px;
+    article {
+        max-width: 45rem;
         width: 100%;
-    }
-
-    .hero {
-        text-align: center;
-        margin-bottom: 3rem;
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-            
-            @include screens.mobile {
-                font-size: 2rem;
-            }
+        background-color: var(--card-a-background);
+        border-radius: 0.66rem;
+        padding: 2rem spacing.$indent;
+        
+        @include screens.mobile {
+            padding: spacing.$indent;
         }
 
-        .intro {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin: 0;
-        }
-    }
-
-    .quick-links {
-        h2 {
-            color: var(--text-primary);
+        header {
             margin-bottom: 2rem;
             text-align: center;
-        }
 
-        .links-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-
-            @include screens.mobile {
-                grid-template-columns: 1fr;
-                gap: 1rem;
+            h1 {
+                font-size: var(--font-size-large);
+                font-weight: var(--font-weight-bold);
+                color: var(--text-brand);
+                margin: 0;
+                
+                @include screens.mobile {
+                    font-size: var(--font-size-kinda-large);
+                }
             }
         }
 
-        .link-card {
-            background-color: var(--card-background);
-            border-radius: 8px;
-            padding: 2rem;
-            text-decoration: none;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            border: 1px solid var(--border-color);
-
-            &:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            }
-
-            h3 {
-                color: var(--text-primary);
-                margin: 0 0 1rem 0;
-                font-size: 1.5rem;
-            }
+        section {
+            display: flex;
+            flex-direction: column;
+            gap: map.get(spacing.$gaps, 'one');
 
             p {
-                color: var(--text-secondary);
+                @extend %base-font;
+                color: var(--text-neutral);
+                line-height: 1.6;
                 margin: 0;
-                line-height: 1.5;
+                text-align: justify;
+
+                @include screens.mobile {
+                    text-align: left;
+                }
             }
         }
     }
