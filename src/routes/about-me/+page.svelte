@@ -4,39 +4,14 @@
 
 <Header/>
 <main>
-    <article>
-        <header>
-            <h1>About Me</h1>
-        </header>
-        
+    <article>        
         <section>
             <p>
-                Welcome to my personal website. I'm passionate about technology, research, and continuous learning. 
-                This space serves as a window into my professional journey, academic pursuits, and creative endeavors.
+                Hello! My name is Colby! Keeping reading this page to learn a bit about me!
             </p>
             
             <p>
-                Throughout my career, I've been driven by curiosity and the desire to solve complex problems. 
-                Whether working in industry roles, conducting research, or teaching, I strive to make meaningful 
-                contributions while constantly expanding my knowledge and skills.
-            </p>
-            
-            <p>
-                My background spans multiple domains, allowing me to bring diverse perspectives to every project. 
-                I believe in the power of interdisciplinary collaboration and the importance of bridging theory 
-                with practical application.
-            </p>
-            
-            <p>
-                When I'm not immersed in professional work, I enjoy exploring new technologies, contributing to 
-                open-source projects, and sharing knowledge with the community. I'm always eager to connect with 
-                like-minded individuals and discuss innovative ideas.
-            </p>
-            
-            <p>
-                Feel free to explore my CV to learn more about my professional experience and educational background, 
-                or check out the gallery to see some of my projects and creative work. I'm always open to new 
-                opportunities and meaningful conversations.
+                TBD
             </p>
         </section>
     </article>

@@ -3,19 +3,20 @@
 		"src/routes/+layout.ts",
 		"src/routes/+layout.ts"
 	],
+	"/about-me": [
+		"src/routes/+layout.ts"
+	],
 	"/blog": [
 		"src/routes/+layout.ts"
 	],
 	"/blog/[slug]": [
+		"src/routes/blog/[slug]/+page.ts",
 		"src/routes/+layout.ts"
 	],
 	"/cv": [
 		"src/routes/+layout.ts"
 	],
 	"/gallery": [
-		"src/routes/+layout.ts"
-	],
-	"/home": [
 		"src/routes/+layout.ts"
 	]
 }

@@ -6,7 +6,7 @@
     $: currentPath = page.url.pathname;
 
     const navItems = [
-        { href: '/home', label: 'Home' },
+        { href: '/about-me', label: 'About Me' },
         { href: '/cv', label: 'CV' },
         { href: '/gallery', label: 'Gallery' },
         { href: '/blog', label: 'Blog' }

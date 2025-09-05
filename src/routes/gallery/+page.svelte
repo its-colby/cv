@@ -6,7 +6,7 @@
     const galleryRows = [
         {
             title: "Schroon Lake",
-            caption: "Digging a hole in a frozen lake, establishing useless safety lines to the shore, cold plunging each day, walking miles across the ice, building fires on both the ice and the shore, doing challenges across the thinnest parts of the lake's frozen surface...it was all amazing. However, strangely enough, the best part about this trip was putting multiple hours worth of manpower into pushing a 500+ pound log 50 yards onto the lake...just to push it back to the shore the day after",
+            // caption: "Digging a hole in a frozen lake, establishing useless safety lines to the shore, cold plunging each day, walking miles across the ice, building fires on both the ice and the shore, doing challenges across the thinnest parts of the lake's frozen surface...it was all amazing. However, strangely enough, the best part about this trip was putting multiple hours worth of manpower into pushing a 500+ pound log 50 yards onto the lake...just to push it back to the shore the day after",
             images: [
                 { 
                     src: "https://res.cloudinary.com/dqdb7eli7/image/upload/v1756820067/IMG_4144_d0w563.png", 
@@ -16,10 +16,10 @@
                     src: "https://res.cloudinary.com/dqdb7eli7/image/upload/v1756820067/IMG_4147_caaxw9.png", 
                     alt: "frozen-schroon-dip" 
                 },
-                { 
-                    src: "https://res.cloudinary.com/dqdb7eli7/image/upload/v1756823158/IMG_1792_lsvskj.jpg", 
-                    alt: "frozen-schroon-3-walking-daytime" 
-                },
+                // { 
+                //     src: "https://res.cloudinary.com/dqdb7eli7/image/upload/v1756823158/IMG_1792_lsvskj.jpg", 
+                //     alt: "frozen-schroon-3-walking-daytime" 
+                // },
                 { 
                     src: "https://res.cloudinary.com/dqdb7eli7/image/upload/v1756823168/IMG_4110_s1fwar.jpg", 
                     alt: "frozen-schroon-night-fire-2-ppl" 
@@ -36,7 +36,7 @@
         },
         {
             title: "Pali Puka",
-            caption: "This trail probably has my favorite entrance of any hike. It just looks like a black abyss into the jungle, usually demarcated by stray cats. After hiking for 5 minutes, you immediately hit the skyline ridge where one wrong move sends you tumbling down to your death. My survival instincts made me crawl some of the very narrow sections, but I know some crazy people who would trail run this. Of course, the group I was with continued hiking the ridge past the traditional end of the trail. However, we got to one section that just looked like pure death, so we stopped. Little did we know, that some crazy people do continue along that ridge for one of the world's craziest and most unknown hikes.",
+            // caption: "This trail probably has my favorite entrance of any hike. It just looks like a black abyss into the jungle, usually demarcated by stray cats. After hiking for 5 minutes, you immediately hit the skyline ridge where one wrong move sends you tumbling down to your death. My survival instincts made me crawl some of the very narrow sections, but I know some crazy people who would trail run this. Of course, the group I was with continued hiking the ridge past the traditional end of the trail. However, we got to one section that just looked like pure death, so we stopped. Little did we know, that some crazy people do continue along that ridge for one of the world's craziest and most unknown hikes.",
             images: [
                 { 
                     src: "https://res.cloudinary.com/dqdb7eli7/image/upload/v1756818451/pali-puka-scenic_fir7jf.jpg", 
@@ -50,15 +50,15 @@
                     src: "https://res.cloudinary.com/dqdb7eli7/image/upload/v1756825141/IMG_3654_ftxl32.jpg", 
                     alt: "pali-puka-farside-scenic" 
                 },
-                { 
-                    src: "https://res.cloudinary.com/dqdb7eli7/image/upload/v1756825139/IMG_3593_muashx.jpg", 
-                    alt: "pali-puka-cat-entrance"
-                },
+                // { 
+                //     src: "https://res.cloudinary.com/dqdb7eli7/image/upload/v1756825139/IMG_3593_muashx.jpg", 
+                //     alt: "pali-puka-cat-entrance"
+                // },
             ]
         },
         {
             title: "Lake George",
-            caption: "This was a fairly standard hike, but of course, me and my group of friends always elevate it. Barefoot and shirtless we hiked, crossed rivers, climbed waterfalls, and swam to islands.",
+            // caption: "This was a fairly standard hike, but of course, me and my group of friends always elevate it. Barefoot and shirtless we hiked, crossed rivers, climbed waterfalls, and swam to islands.",
             images: [
                 { 
                     src: "https://res.cloudinary.com/dqdb7eli7/image/upload/v1756823171/IMG_5699_cloyun.jpg", 
@@ -84,7 +84,7 @@
         },
         {
             title: "Mount Olomana",
-            caption: "Yet another hike that claims the lives of many. I swear, it seems like every trail I do in Hawaii has a sign with a death total on it; its like the new standard for marking trails.Hiking the first two peaks is not for the faint of heart, but relatively easy. Getting to the picturesque triangle-looking third peak is where lives get lost. Ultimately, its not too bad, but one wrong move could cause death. Unfortunately, I was struggling with a massive knee injury at the time that prevented me from contracting my hamstring effectively...so I was quite nervous. I also happened to be with a fellow daredevil who wanted to downclimb the backside of the third peak. This was one of those 'extensions' that you can only find on obscure comments in forums of some daredevil's blog. Immediately after beginning, we were faced with not hiking, but climbing with 100+ foot falls to either side. We hoped it would get better, but it didn't. We also had no where to go...because there was no trail of course. So, we decided to keep our lives, get back up to the third peak, and head back the traditional way (that still claims lives). Nonetheless, my favorite part of this hike is a forest along the way to the first peak that has great trees to climb.",
+            // caption: "Yet another hike that claims the lives of many. I swear, it seems like every trail I do in Hawaii has a sign with a death total on it; its like the new standard for marking trails.Hiking the first two peaks is not for the faint of heart, but relatively easy. Getting to the picturesque triangle-looking third peak is where lives get lost. Ultimately, its not too bad, but one wrong move could cause death. Unfortunately, I was struggling with a massive knee injury at the time that prevented me from contracting my hamstring effectively...so I was quite nervous. I also happened to be with a fellow daredevil who wanted to downclimb the backside of the third peak. This was one of those 'extensions' that you can only find on obscure comments in forums of some daredevil's blog. Immediately after beginning, we were faced with not hiking, but climbing with 100+ foot falls to either side. We hoped it would get better, but it didn't. We also had no where to go...because there was no trail of course. So, we decided to keep our lives, get back up to the third peak, and head back the traditional way (that still claims lives). Nonetheless, my favorite part of this hike is a forest along the way to the first peak that has great trees to climb.",
             images: [
                 { 
                     src: "https://res.cloudinary.com/dqdb7eli7/image/upload/v1756825164/IMG_9164_hzol23.jpg", 
@@ -114,7 +114,7 @@
         },
         {
             title: "Heart Lake",
-            caption: "Hiking this when the trees change colors is something everyone should do. When my friends and I hiked it, it had rained the day before, and it was supposed to hail the day of and be around 30 degrees Farenheit. Of course, we decided we had to do it shirtless and barefoot. It was very odd walking passed people dressed in winter gear. Despite going barefoot a lot, this ground was so rough and painful. But luckily, it was so cold that our feet had no feeling anyway. Just to make sure we didn't get frostbite, we would take breaks every 5 minutes and furiously clench our feet with our hands...except my one flexible friend who was able to warm his feet in his armpits (somehow) one at a time.",
+            // caption: "Hiking this when the trees change colors is something everyone should do. When my friends and I hiked it, it had rained the day before, and it was supposed to hail the day of and be around 30 degrees Farenheit. Of course, we decided we had to do it shirtless and barefoot. It was very odd walking passed people dressed in winter gear. Despite going barefoot a lot, this ground was so rough and painful. But luckily, it was so cold that our feet had no feeling anyway. Just to make sure we didn't get frostbite, we would take breaks every 5 minutes and furiously clench our feet with our hands...except my one flexible friend who was able to warm his feet in his armpits (somehow) one at a time.",
             images: [
                 { 
                     src: "https://res.cloudinary.com/dqdb7eli7/image/upload/v1756819321/IMG_2314_zwnfbx.jpg", 
@@ -209,10 +209,10 @@
                     src: "https://res.cloudinary.com/dqdb7eli7/image/upload/v1756823159/IMG_2120_gqrlo7.jpg", 
                     alt: "chapel-pond-wall-low-climb" 
                 },
-                { 
-                    src: "https://res.cloudinary.com/dqdb7eli7/image/upload/v1756823174/IMG_6989_tynuz3.jpg", 
-                    alt: "chapel-pond-feet" 
-                },
+                // { 
+                //     src: "https://res.cloudinary.com/dqdb7eli7/image/upload/v1756823174/IMG_6989_tynuz3.jpg", 
+                //     alt: "chapel-pond-feet" 
+                // },
                 { 
                     src: "https://res.cloudinary.com/dqdb7eli7/image/upload/v1756823175/IMG_7129_xkdijd.jpg", 
                     alt: "chapel-pond-back-scenic" 
@@ -359,10 +359,10 @@
                     src: "https://res.cloudinary.com/dqdb7eli7/image/upload/v1756825123/231672901_246688390609082_6245637837618808526_n_naseo7.jpg", 
                     alt: "rumney-bouldering-crimp"
                 },
-                { 
-                    src: "https://res.cloudinary.com/dqdb7eli7/image/upload/v1756825128/233625186_802361320429738_1727941105202489782_n_tnq5gv.jpg", 
-                    alt: "stoney-classic-front-boulder" 
-                },
+                // { 
+                //     src: "https://res.cloudinary.com/dqdb7eli7/image/upload/v1756825128/233625186_802361320429738_1727941105202489782_n_tnq5gv.jpg", 
+                //     alt: "stoney-classic-front-boulder" 
+                // },
                 { 
                     src: "https://res.cloudinary.com/dqdb7eli7/image/upload/v1756825126/231984949_2899115036967871_6803770982984566992_n_mfnu8n.jpg", 
                     alt: "rumney-bouldering" 
@@ -413,10 +413,10 @@
                     src: "https://res.cloudinary.com/dqdb7eli7/image/upload/v1756846962/306527958_800688734475399_2871929026202741493_n_1_ovs5kj.jpg", 
                     alt: "l-sit-pillar" 
                 },
-                { 
-                    src: "https://res.cloudinary.com/dqdb7eli7/image/upload/v1756846962/306038110_823179652025471_6414430886347247126_n_zlqbiw.jpg", 
-                    alt: "standing-on-pillar" 
-                },
+                // { 
+                //     src: "https://res.cloudinary.com/dqdb7eli7/image/upload/v1756846962/306038110_823179652025471_6414430886347247126_n_zlqbiw.jpg", 
+                //     alt: "standing-on-pillar" 
+                // },
                 { 
                     src: "https://res.cloudinary.com/dqdb7eli7/image/upload/v1756846962/305940111_1788735721472426_6815439007533324306_n_enxtlt.jpg", 
                     alt: "hanging-upside-down" 
@@ -448,23 +448,23 @@
                 },
             ]
         },
-        {
-            title: "Falling into Cactus",
-            images: [
-                { 
-                    src: "https://res.cloudinary.com/dqdb7eli7/image/upload/v1756846964/IMG_0164_yisaxz.jpg", 
-                    alt: "cactus-er" 
-                },
-                { 
-                    src: "https://res.cloudinary.com/dqdb7eli7/image/upload/v1756846963/IMG_0166_xhb2kf.jpg", 
-                    alt: "cactus-arm" 
-                },
-                { 
-                    src: "https://res.cloudinary.com/dqdb7eli7/image/upload/v1756846964/IMG_5319_g7bojk.png", 
-                    alt: "cactus-finger" 
-                },
-            ]
-        },
+        // {
+        //     title: "Falling into Cactus",
+        //     images: [
+        //         { 
+        //             src: "https://res.cloudinary.com/dqdb7eli7/image/upload/v1756846964/IMG_0164_yisaxz.jpg", 
+        //             alt: "cactus-er" 
+        //         },
+        //         { 
+        //             src: "https://res.cloudinary.com/dqdb7eli7/image/upload/v1756846963/IMG_0166_xhb2kf.jpg", 
+        //             alt: "cactus-arm" 
+        //         },
+        //         { 
+        //             src: "https://res.cloudinary.com/dqdb7eli7/image/upload/v1756846964/IMG_5319_g7bojk.png", 
+        //             alt: "cactus-finger" 
+        //         },
+        //     ]
+        // },
         {
             title: "Miscellaneous",
             images: [
@@ -488,6 +488,9 @@
 <Header/>
 <main>
     <article>
+        <header>
+            <p>Below, you can find a few of my favorite memories that happened to be caught on camera :)</p>
+        </header>
         {#each galleryRows as row}
             <section class="gallery-row">
                 {#if row.title}
@@ -500,7 +503,7 @@
                     {#each row.images as image, index}
                         <figure class="image-item">
                             <img src={image.src} alt={image.alt} />
-                            <figcaption>Photo {index + 1}</figcaption>
+                            <!-- <figcaption>Photo {index + 1}</figcaption> -->
                         </figure>
                     {/each}
                 </div>
@@ -558,25 +561,26 @@
 
     }
 
-    .gallery-row {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-
-        .row-caption {
+    p {
             @extend %base-font;
             color: var(--text-neutral);
             line-height: 1.6;
             margin: 0;
             text-align: justify;
             font-style: italic;
-            margin-left: 6rem;
-            margin-right: 6rem;
+            text-align: center;
+            margin: 0 auto;
+            max-width: 20rem;
             
             @include screens.mobile {
                 text-align: left;
             }
         }
+
+    .gallery-row {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
 
         .image-grid {
             display: flex;
