@@ -40,28 +40,38 @@
     function renderYaml(obj: any, depth = 0): string {
         if (obj === null || obj === undefined) return '';
         
-        const indent = '  '.repeat(depth);
+        const indent = '    '.repeat(depth); // Changed from 2 spaces to 4 spaces
         
         if (typeof obj === 'string' || typeof obj === 'number' || typeof obj === 'boolean') {
             return obj.toString();
         }
         
         if (Array.isArray(obj)) {
-            return obj.map(item => `${indent}- ${renderYaml(item, depth + 1)}`).join('\n');
+            const separator = depth === 0 ? '\n' : '\n'; // Same spacing for arrays
+            return obj.map(item => `${indent}- ${renderYaml(item, depth + 1)}`).join(separator);
         }
         
         if (typeof obj === 'object') {
-            return Object.entries(obj)
+            const entries = Object.entries(obj)
                 .map(([key, value]) => {
                     if (key === 'title') return ''; // Skip title as it's shown in header
                     const renderedValue = renderYaml(value, depth + 1);
-                    if (renderedValue.includes('\n')) {
-                        return `${indent}${key}:\n${renderedValue}`;
+                    // Always use multi-line format for arrays (even single-item arrays) and multi-line content
+                    if (Array.isArray(value) || renderedValue.includes('\n')) {
+                        return `${indent}<span class="yaml-key">${key}</span>:\n${renderedValue}`;
                     }
-                    return `${indent}${key}: ${renderedValue}`;
+                    return `${indent}<span class="yaml-key">${key}</span>: ${renderedValue}`;
                 })
-                .filter(line => line !== '')
-                .join('\n');
+                .filter(line => line !== '');
+            
+            // Add different spacing based on depth level
+            if (depth === 0) {
+                return entries.join('\n\n'); // Double newlines for top-level items
+            } else if (depth === 1) {
+                return entries.join('\n'); // Single newlines for second-level items
+            } else {
+                return entries.join('\n'); // Single newlines for deeper levels
+            }
         }
         
         return obj.toString();
@@ -88,7 +98,7 @@
             </header>
             
             <section class="content">
-                <pre class="yaml-content">{renderYaml(post.content)}</pre>
+                <pre class="yaml-content">{@html renderYaml(post.content)}</pre>
             </section>
         {/if}
     </article>
@@ -212,6 +222,11 @@
                 font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
                 font-size: var(--font-size-small);
                 border: 1px solid var(--card-c-background);
+
+                :global(.yaml-key) {
+                    color: var(--text-brand);
+                    font-weight: var(--font-weight-bold);
+                }
             }
         }
     }

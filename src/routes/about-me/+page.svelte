@@ -1,18 +1,17 @@
 <script lang="ts">
     import Header from '$lib/ui/header/Header.svelte';
+    import { about_me } from '$lib/cv';
 </script>
 
 <Header/>
 <main>
     <article>        
         <section>
-            <p>
-                Hello! My name is Colby! Keeping reading this page to learn a bit about me!
-            </p>
-            
-            <p>
-                TBD
-            </p>
+            {#each about_me as paragraph}
+                <p>
+                    {paragraph.text}
+                </p>
+            {/each}
         </section>
     </article>
 </main>

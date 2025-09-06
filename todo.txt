@@ -1,0 +1,4 @@
+pdf generation
+download pdf link
+show more info on professional breaks, fulll-time etc
+cv styling

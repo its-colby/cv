@@ -113,4 +113,11 @@ export const seasons = {
     fall2023: new Date({ start_year: 2023, season: Season.FALL }),
 
     spring2024: new Date({ start_year: 2024, season: Season.SPRING }),
+
+    fall2025: new Date({ start_year: 2025, season: Season.FALL }),
+    
+    spring2026: new Date({ start_year: 2026, season: Season.SPRING }),
+    fall2026: new Date({ start_year: 2026, season: Season.FALL }),
+
+    spring2027: new Date({ start_year: 2027, season: Season.SPRING }),
 }

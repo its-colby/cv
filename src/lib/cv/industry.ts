@@ -104,4 +104,4 @@ export const industry_roles: IndustryRole[] = [
             'Researched and benchmarked the various range polling protocols and defined various attacks against each one.'
         ]
     }),
-];
+].sort((a, b) => b.date.start_year - a.date.start_year);

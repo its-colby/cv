@@ -3,10 +3,10 @@
     import { Download } from "lucide-svelte";
 
     const download_file = () => {
-        const file_path = '/colby_anderson.cv.pdf';
+        const file_path = '/colby-anderson.cv.pdf';
         const link = document.createElement('a');
         link.href = file_path;
-        link.download = 'colby_anderson.cv.pdf';
+        link.download = 'colby-anderson.cv.pdf';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);

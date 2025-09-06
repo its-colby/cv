@@ -10,7 +10,7 @@
 <div>
     {#each timeline_by_year as yearGroup}
         <section>
-            <h2>{yearGroup.year}</h2>
+            <h2>{yearGroup.year}{yearGroup.year > new Date().getFullYear() ? ' (Expected)' : ''}</h2>
             <ul>
                 {#each yearGroup.events as event}
                     <li>

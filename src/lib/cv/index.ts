@@ -7,3 +7,4 @@ export * from './teaching';
 export * from './degrees';
 export * from './misc';
 export * from './timeline';
+export * from './about-me';

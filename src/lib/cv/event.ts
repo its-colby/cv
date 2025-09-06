@@ -1,6 +1,7 @@
 import { Date } from "./date";
 
 export enum Commitment {
+    MORE_THAN_FULL_TIME = 'More than Full-Time',
     FULL_TIME = 'Full-Time',
     PART_TIME = 'Part-Time'
 }

@@ -489,7 +489,7 @@
 <main>
     <article>
         <header>
-            <p>Below, you can find a few of my favorite memories that happened to be caught on camera :)</p>
+            <p>Below, you can find a few of my favorite memories (btw, this page may take a while to load...)</p>
         </header>
         {#each galleryRows as row}
             <section class="gallery-row">
