@@ -37,5 +37,12 @@
             flex-direction: column;
             padding: 20px;
         }
+
+        @include screens.mobile {
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
     }
 </style>

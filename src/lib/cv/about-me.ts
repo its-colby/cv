@@ -7,7 +7,7 @@ export enum AboutMeKind {
 export const about_me = [
     {
         kind: AboutMeKind.INTRODUCTION,
-        text: 'Hello! My name is Colby! Keeping reading this page to learn a bit about me!'},
+        text: 'Hello! My name is Colby!'},
     {
         kind: AboutMeKind.PROFESSIONAL,
         text: "I am obsessed with abstractions and certainty. Naturally, this leads me to love pure mathematics and formal logic. And because of my strong background in various areas of computer science (cryptography and systems/software architecture in particular), I've landed in the field of programming language theory, more specifically 'applied type theory'."},

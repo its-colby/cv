@@ -583,12 +583,20 @@
         gap: 1.5rem;
 
         .image-grid {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 1.5rem;
-            justify-content: center;
+            justify-items: center;
 
+            // Tablet and smaller screens - 2 columns max
+            @media (max-width: 768px) {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.25rem;
+            }
+
+            // Mobile - single column
             @include screens.mobile {
+                grid-template-columns: 1fr;
                 gap: 1rem;
             }
         }
@@ -603,13 +611,10 @@
             border: 1px solid var(--border-color);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             margin: 0;
-            // min-width: 150px;
-            // max-width: 200px;
-            flex: 1 1 auto;
+            width: 100%;
+            max-width: 320px;
 
             @include screens.mobile {
-                min-width: 120px;
-                max-width: 150px;
                 padding: 0.75rem;
             }
 
@@ -619,30 +624,19 @@
             }
 
             img {
-                width: 300px;
-                height: 300px;
+                width: 100%;
+                max-width: 280px;
+                height: 280px;
                 object-fit: cover;
                 border-radius: 4px;
                 margin-bottom: 0.75rem;
 
                 @include screens.mobile {
-                    width: 80px;
-                    height: 80px;
+                    max-width: 280px;
+                    height: 280px;
                 }
             }
 
-            figcaption {
-                @extend %base-font;
-                color: var(--text-neutral);
-                text-align: center;
-                font-size: 0.9rem;
-                line-height: 1.4;
-                margin: 0;
-
-                @include screens.mobile {
-                    font-size: 0.8rem;
-                }
-            }
         }
     }
 </style>

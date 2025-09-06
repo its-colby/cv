@@ -38,10 +38,6 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
-
-        @include screens.mobile {
-            display: none;
-        }
     }
 
     button:hover {

@@ -95,8 +95,8 @@
         }
 
         @include screens.mobile {
-            padding-left: 0;
-            padding-right: 0;
+            padding-left: spacing.$indent;
+            padding-right: spacing.$indent;
         }
     }
 

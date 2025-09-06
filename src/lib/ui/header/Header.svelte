@@ -33,15 +33,14 @@
     </section>
     
     <section class="mobile">
-        <div class="top">
-            <Logo />
+        <div class="mobile-header">
+            <nav>
+                {#each navItems as item}
+                    {@render navLink(item.href, item.label, true)}
+                {/each}
+            </nav>
             <ColorThemeToggle size={25}/>
         </div>
-        <nav>
-            {#each navItems as item}
-                {@render navLink(item.href, item.label, true)}
-            {/each}
-        </nav>
     </section>
 </header>
 
@@ -88,24 +87,23 @@
     section.mobile {
         display: flex;
         flex-direction: column;
-        gap: spacing.$indent;
 
         @include screens.desktop {
             display: none;
         }
 
-        .top {
+        .mobile-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             width: 100%;
-        }
+            height: 3rem;
 
-        nav {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            width: 100%;
+            nav {
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+            }
         }
     }
 
